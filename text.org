@@ -1,0 +1,28 @@
+* 確率と統計 藤澤洋徳，朝倉書店
+
+- 教科書のまとめ
+
+* Rによるやさしい統計学
+
+
+* [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]] 中京大 白井先生
+
+** 確率の教材  
+- [[http://whitewell.sakura.ne.jp/R/Rprobability.html][Rで確率を学ぶ]] (白井)
+
+** Rによるやさしい統計学の2，3章
+
+- [[http://whitewell.sakura.ne.jp/R/Rstatistics-01.html][Rで統計学を学ぶ(1)]] 1変数 白井
+- [[http://whitewell.sakura.ne.jp/R/Rstatistics-02.html][Rで統計学を学ぶ(2)]] 2変数 白井
+
+* [[https://www.jstat.or.jp/openstatistics/][データ分析のための統計学入門 原著第4版 “OpenIntro Statistics Fourth Edition” - 日本統計協会]]
+
+  [[http://www.kunitomo-lab.sakura.ne.jp/2021-3-3Open(S).pdf][2021-3-3Open(S).pdf]]
+
+  下記2章の例題を参考にする予定です。
+
+** 確率の例題
+  - 3章 確率
+    
+** 確率分布の例題
+  - 4章 確率変数の分布

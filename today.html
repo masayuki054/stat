@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-19 火 23:17 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>確率統計 (1) 2022/04/20</title>
+<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">確率統計 (1) 2022/04/20</h1>
+
+<div id="outline-container-org208e5db" class="outline-2">
+<h2 id="org208e5db">ガイダンス</h2>
+<div class="outline-text-2" id="text-org208e5db">
+</div>
+<div id="outline-container-org4532b2a" class="outline-3">
+<h3 id="org4532b2a">シラバス</h3>
+<div class="outline-text-3" id="text-org4532b2a">
+<p>
+<a href="https://ia2.iwate-u.ac.jp/websyllabus/kyouin/slbsCtlDspKyouin.php?type=top">アイアシスタント</a>
+</p>
+</div>
+</div>
+<div id="outline-container-org72a4675" class="outline-3">
+<h3 id="org72a4675">出席登録</h3>
+<div class="outline-text-3" id="text-org72a4675">
+<p>
+<a href="https://lms.iwate-u.ac.jp/webclass/course.php/22S6211/manage/?acs_=7a0611dd">確率統計学 [22S6211] - WebClass</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org369824c" class="outline-3">
+<h3 id="org369824c">講義終了後アンケート</h3>
+<div class="outline-text-3" id="text-org369824c">
+<p>
+<a href="https://drive.google.com/drive/u/1/folders/1-YWezVm0nuo-BAcGR9saY_jN1BRA0D1S">アンケート - Google ドライブ</a>  フォルダ
+</p>
+<ul class="org-ul">
+<li>アンケート (任意) <a href="https://forms.gle/bJPq3Gr7XE3iR2DG8">https://forms.gle/bJPq3Gr7XE3iR2DG8</a>
+講義終了後に</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org68c3f1b" class="outline-2">
+<h2 id="org68c3f1b">教材</h2>
+<div class="outline-text-2" id="text-org68c3f1b">
+</div>
+<div id="outline-container-org7409016" class="outline-3">
+<h3 id="org7409016">確率と統計 藤澤洋徳，朝倉書店</h3>
+<div class="outline-text-3" id="text-org7409016">
+<ul class="org-ul">
+<li>教科書のまとめ</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5832669" class="outline-3">
+<h3 id="org5832669">Rによるやさしい統計学</h3>
+</div>
+
+
+<div id="outline-container-orgd096fc5" class="outline-3">
+<h3 id="orgd096fc5"><a href="http://whitewell.sakura.ne.jp/R/">Webpage for Probability Theory and Statistics (B)</a> 中京大 白井先生</h3>
+<div class="outline-text-3" id="text-orgd096fc5">
+</div>
+<div id="outline-container-org92cfcf6" class="outline-4">
+<h4 id="org92cfcf6">確率の教材</h4>
+<div class="outline-text-4" id="text-org92cfcf6">
+<ul class="org-ul">
+<li><a href="http://whitewell.sakura.ne.jp/R/Rprobability.html">Rで確率を学ぶ</a> (白井)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org444c8f1" class="outline-4">
+<h4 id="org444c8f1">Rによるやさしい統計学の2，3章</h4>
+<div class="outline-text-4" id="text-org444c8f1">
+<ul class="org-ul">
+<li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-01.html">Rで統計学を学ぶ(1)</a> 1変数 白井</li>
+<li><a href="http://whitewell.sakura.ne.jp/R/Rstatistics-02.html">Rで統計学を学ぶ(2)</a> 2変数 白井</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org22a71bf" class="outline-3">
+<h3 id="org22a71bf"><a href="https://www.jstat.or.jp/openstatistics/">データ分析のための統計学入門 原著第4版 “OpenIntro Statistics Fourth Edition” - 日本統計協会</a></h3>
+<div class="outline-text-3" id="text-org22a71bf">
+<p>
+<a href="http://www.kunitomo-lab.sakura.ne.jp/2021-3-3Open(S).pdf">2021-3-3Open(S).pdf</a>
+</p>
+
+<p>
+下記2章の例題を参考にする予定です。
+</p>
+</div>
+
+<div id="outline-container-org512e307" class="outline-4">
+<h4 id="org512e307">確率の例題</h4>
+<div class="outline-text-4" id="text-org512e307">
+<ul class="org-ul">
+<li>3章 確率</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgda4409c" class="outline-4">
+<h4 id="orgda4409c">確率分布の例題</h4>
+<div class="outline-text-4" id="text-orgda4409c">
+<ul class="org-ul">
+<li>4章 確率変数の分布</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge434b7d" class="outline-2">
+<h2 id="orge434b7d">確率と統計</h2>
+<div class="outline-text-2" id="text-orge434b7d">
+<p>
+note, text
+</p>
+</div>
+<div id="outline-container-org0b49b97" class="outline-3">
+<h3 id="org0b49b97">確率と確率空間</h3>
+<div class="outline-text-3" id="text-org0b49b97">
+</div>
+<div id="outline-container-org95f323b" class="outline-4">
+<h4 id="org95f323b">1.1 標本空間と事象</h4>
+<div class="outline-text-4" id="text-org95f323b">
+<ul class="org-ul">
+<li>確率における標本空間と事象に関する言葉の定義，
+その定義を，集合の言葉での解釈する
+<dl class="org-dl">
+<dt>標本空間</dt><dd>すべての根源事象の集合</dd>
+<dt>事象</dt><dd>標本空間の部分集合</dd>
+</dl></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org68f0d12" class="outline-4">
+<h4 id="org68f0d12">1.2 確率の定義</h4>
+<div class="outline-text-4" id="text-org68f0d12">
+<ul class="org-ul">
+<li>P(A)</li>
+<li>事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1205e94" class="outline-4">
+<h4 id="org1205e94">1.3 確率の性質</h4>
+<div class="outline-text-4" id="text-org1205e94">
+<ul class="org-ul">
+<li>確率の公理</li>
+<li>排反な事象</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6debca3" class="outline-4">
+<h4 id="org6debca3">1.4 条件付確率</h4>
+<div class="outline-text-4" id="text-org6debca3">
+<ul class="org-ul">
+<li>\(P(B|A) = P(A) P(B \cup A)\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9f5fc11" class="outline-4">
+<h4 id="org9f5fc11">1.5 独立性</h4>
+<div class="outline-text-4" id="text-org9f5fc11">
+<ul class="org-ul">
+<li>\(P(B) = P(B|A)\) なら独立， 事象A と 事象B は無関係</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgabf5ca7" class="outline-4">
+<h4 id="orgabf5ca7">1.6 ベイズの定理</h4>
+<div class="outline-text-4" id="text-orgabf5ca7">
+<ul class="org-ul">
+<li>\(P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}\)
+<ul class="org-ul">
+<li>\(P(A\cap B_i) = P(B_i) P(A|B_i)\)</li>
+<li>\(P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org20cd0b1" class="outline-4">
+<h4 id="org20cd0b1">1.7 例</h4>
+<div class="outline-text-4" id="text-org20cd0b1">
+<ul class="org-ul">
+<li>くじをひく順番で当る確率が違うのか</li>
+<li>システム全体の故障率</li>
+<li>この検査は信頼できるのか</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org1352625" class="outline-4">
+<h4 id="org1352625">1.8 確率空間 とばす，2.9 と一緒に</h4>
+<div class="outline-text-4" id="text-org1352625">
+<p>
+事象と確率を考える，確率モデル。
+</p>
+
+<ul class="org-ul">
+<li>標本空間 \(\Omega\)</li>
+<li>事象の集合 A</li>
+<li>確率関数 P:A-&gt;R</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org377ec8d" class="outline-2">
+<h2 id="org377ec8d">R/RStudio</h2>
+<div class="outline-text-2" id="text-org377ec8d">
+</div>
+<div id="outline-container-org642a9a6" class="outline-3">
+<h3 id="org642a9a6">R markdown</h3>
+<div class="outline-text-3" id="text-org642a9a6">
+<ul class="org-ul">
+<li><a href="https://kazutan.github.io/kazutanR/Rmd_intro.html">R Markdown入門</a> <a href="https://qiita.com/tomotagwork/items/c92fb40a76f56ea16aa4">R Markdownによるレポート生成 - Qiita</a></li>
+</ul>
+
+<p>
+R プログラムとその出力，解説を含むドキュメントの作成に用います。
+すごく便利です。
+</p>
+
+<p>
+プログラムの開発，デバッグ，ドキュメンテーションが，一つのファイルで行
+えます。
+</p>
+
+<p>
+本講義でのプログラム作成は，これを用いましょう。
+</p>
+</div>
+
+<div id="outline-container-org09b2d28" class="outline-4">
+<h4 id="org09b2d28">emacs org-mode</h4>
+<div class="outline-text-4" id="text-org09b2d28">
+<p>
+が，講師は，もっと便利で汎用な，emacs org-mode を使っています。RStudio
+は使いたくありません。悪しからず。
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfa845ca" class="outline-3">
+<h3 id="orgfa845ca">R 言語 入門</h3>
+<div class="outline-text-3" id="text-orgfa845ca">
+<ul class="org-ul">
+<li><a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a></li>
+</ul>
+
+<p>
+プログラム言語としての機能を学び，RStudioを用いて，Rmarkdown文書を作成
+しましょう。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgde049c4" class="outline-3">
+<h3 id="orgde049c4">Rの設定など</h3>
+<div class="outline-text-3" id="text-orgde049c4">
+<ul class="org-ul">
+<li><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></li>
+</ul>
+
+<p>
+R/RStudioの利用環境設定などの参考にしましょう。
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgf23dd14" class="outline-3">
+<h3 id="orgf23dd14">RStudio</h3>
+<div class="outline-text-3" id="text-orgf23dd14">
+<ul class="org-ul">
+<li><a href="https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html">R/RStudio入門</a></li>
+</ul>
+
+<p>
+RStudioの使い方を学び，Rmarkdown文書を作りましょう。
+</p>
+</div>
+</div>
+
+<div id="outline-container-org3a56ac8" class="outline-3">
+<h3 id="org3a56ac8">数式の表現</h3>
+<div class="outline-text-3" id="text-org3a56ac8">
+<ul class="org-ul">
+<li><a href="https://qiita.com/kazutan/items/8441693e77e9cb6fd833">R MarkdownでRチャンクと数式を組み合わせる - Qiita</a></li>
+<li><a href="https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%B0%A1%E5%8D%98%E3%81%AA%E6%95%B0%E5%BC%8F%281%29">LaTeX入門/簡単な数式(1) - TeX Wiki</a></li>
+<li><a href="https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%B0%A1%E5%8D%98%E3%81%AA%E6%95%B0%E5%BC%8F%282%29">LaTeX入門/簡単な数式(2) - TeX Wiki</a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
+<p class="date">Created: 2022-04-19 火 23:17</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

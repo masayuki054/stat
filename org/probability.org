@@ -1,0 +1,71 @@
+
+* 参考
+
+[[https://www.jstat.or.jp/openstatistics/][データ分析のための統計学入門 原著第4版 “OpenIntro Statistics Fourth Edition” - 日本統計協会]]  
+
+- [[http://www.kunitomo-lab.sakura.ne.jp/2021-3-3Open(S).pdf][2021-3-3Open(S).pdf]]
+
+- [[https://www.openintro.org/book/os/][OpenIntro Statistics]]
+
+
+[[https://www1.doshisha.ac.jp/~mjin/R/][JIN'S PAGE]] Rについって，Rによるいろいろについて，。。。
+
+- [[https://www1.doshisha.ac.jp/~mjin/R/Chap_10/10.html][データ解析・マイニングとR言語]]  Rと確率分布
+
+[[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]  
+
+* 1. 確率と確率空間
+
+** 1.1 標本空間と事象
+
+- 標本点 \( \omega \) (sample point)  :: サイコロの出目， \(\omega\) は， 1,2,3,4,5,6 のいずれか
+  
+- 標本空間 \( \Omega \) (sample space) :: 全標本点の集合， 1\( \Omega = \{1, 2, 3, 4,
+  5, 6\} \),   \( \omega \in \Omega \)
+
+- 事象 (event) :: \(\Omega\)の部分集合
+
+  - 偶数の目がでる事象 \( A = \{ 2, 4, 6 \} \),
+
+  - 空事象 \( \phi = \{ \} \),
+
+  - 全事象 \( U = \Omega = \{1, 2, 3, 4, 5, 6 \}\),
+
+* 第 3. 確率 
+*** 3.1.2 確率
+
+確率を使って明らかにランダムと見なせる現象を記述・理解する道具立てを構
+成しよう.
+
+確率を用いた結果としての *ランダム過程 (random process)*
+を組み立てる.
+
+サイコロ投げ → 1, 2, 3, 4, 5, 6
+コイン投げ → H , T
+
+サイコロ投げやコイン投げはランダム過程の例であり, 事前には知ることができない不確実なある結果
+が起きる事象である.
+
+- 確率 :: 事象の確率とはランダム過程が無限に観察されたとするときに事象
+  が起きる割合を意味する.
+
+  
+確率を割合として定義すると 0 から 1(0,1 を含む) の間の値をとり, 0%から 100%のパーセンテー
+ジでも表される.
+
+確率はサイコロ投げを多数回行うことで例示される. ここで ˆpn を最初の n
+回で 1 が出る回数としよう. 回数を増やしていくと ˆpn は 1 が出る確率 p
+= 1/6 に収束するだろう. 図表 3.1 は100,000 回の試行での収束を示してお
+いた. ˆpn が p の周りで安定する傾向は大数の法則 (Law of Large Numbers)
+と呼ばれている.n (number of rolls) 1 10 100 1,000 10,000 100,000 0.0
+0.1 0.2
+
+** ベイズの定理
+
+    全確率の定理: 互いに排反な事象 E1, E2,…, En(すなわち、i≠jであるすべてのi,j (1 ≤ i,j ≤ n)に対し、 Ei∩Ej=φ、E1∪ E2∪…∪En=U )と、任意の事象Aに対して次式が成立する:
+    P(A) = P(E1)P(A | E1) + P(E2)P(A | E2) + … + P(En)P(A | En) =
+
+ベイズの定理(Bayes theorem)
+    事前確率(prior probability, 無条件確率): P(E1), P(E2), … : 事象Aが観測される前(事前)に与えられているため、事前確率という
+    事後確率(posterior probability): P(E1|A), P(E2|A), … （条件付き確率）: 事象Aが起こった後(事後)の確率であることから 
+
