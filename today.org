@@ -93,5 +93,5 @@ R/RStudioの利用環境設定などの参考にしましょう。
 
 * 講義終了後アンケート
 [[https://drive.google.com/drive/u/1/folders/1-YWezVm0nuo-BAcGR9saY_jN1BRA0D1S][アンケート - Google ドライブ]]  フォルダ
-- アンケート (任意) https://forms.gle/bJPq3Gr7XE3iR2DG8
+- アンケート (任意) https://forms.gle/aAyPxDV4tBoTy4Z46
   講義終了後に
