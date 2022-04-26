@@ -2,5 +2,6 @@
 #+OPTIONS: ^:{}
 #+PROPERTY:  header-args :padline no
 #+author: suzuki@iwate-u.ac.jp
+#+title: 確率統計2022
 #+HTML_MATHJAX:  path:"http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"
 

@@ -1,0 +1,256 @@
+#+include: R-intro-common.org
+#+OPTIONS: tex:t 
+#+property: header-args:R :session *bioR* :results output :exports both
+
+[[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
+
+* 8. ファイルからの読み込み
+
+** データファイルとフォルダ
+   
+  まず、以下のような数値データが書かれたファイルを用意しましょう。
+
+  - 仮にこのファイル 名を testdata.txt、
+  - ディレクトリの位置を /Users/saito/R/data とします。
+
+  #+begin_src R :tangle R-intro/data/08-01.txt
+ 14
+ 14
+ 21
+ 35
+ 6
+  #+end_src
+
+  まず setwd によって作業ディレクトリを/Users/saito/TMP にします。
+  #+begin_src R :tangle R-intro/code/08.R
+setwd("/Users/saito/TMP")
+  #+end_src
+
+** 数値列を読み込む scan 関数
+   
+   次に scan コマンドを使って、データを変数 x に読み込みます。
+   #+begin_src R :tangle R-intro/code/08.R
+
+(x <- scan("R-intro/data/08-01.txt"))
+
+   #+end_src
+
+    #+RESULTS:
+    : Read 5 items
+    : [1] 14 14 21 35  6
+
+    x にファイルの数値が *ベクトル* として読み込まれています。
+
+** 表の読み込みを行う関数 read.table
+
+   以下のようなタブ区切 りのファイル batters.txt があったとします。
+
+  #+begin_src R :tangle R-intro/data/batters.txt
+
+	Team	At_Bat	Hits	Home_Runs
+Nomura	Hawks	10472	2901	657
+Harimoto	Flyers	9666	3085	504
+Kinugasa	Carps	9404	2543	504
+Oh	Giants	9250	2786	868
+Kadota	Hawks	8868	2566	567
+
+  #+end_src
+
+  read.table により データ・フレームとして読み込む:
+
+  #+begin_src R :tangle R-intro/code/08.R
+
+(batters <- read.table("R-intro/data/batters.txt", header=T, sep="\t", row.names=1))
+
+  #+end_src
+
+  #+RESULTS:
+  :            Team At_Bat Hits Home_Runs
+  : Nomura    Hawks  10472 2901       657
+  : Harimoto Flyers   9666 3085       504
+  : Kinugasa  Carps   9404 2543       504
+  : Oh       Giants   9250 2786       868
+  : Kadota    Hawks   8868 2566       567
+
+  x$Hits などで安打数を得ることができます。
+
+  #+begin_src R :tangle R-intro/code/08.R
+
+x$Team
+x$Hits
+
+  #+end_src
+
+  #+RESULTS:
+  : [1] 3085
+  : [1] Hawks  Flyers Carps  Giants Hawks 
+  : Levels: Carps Flyers Giants Hawks
+  : [1] 2901 3085 2543 2786 2566
+
+  read.table の引数の意味 :
+
+  - "batters.txt" :: ファイル名
+  - header = T ::  Team, At_Bat など のヘッダーがあることを示す
+  - sep = "\t" :: タブ区切りであることを示し 
+  - row.names = 1  :: 行の名前が1列分あることを指定
+
+  read.table の引数のオプション
+   
+  - quote="" :: 引用符""の処理をしない。
+  - check.names=F :: 列ラベル名の自動変換が抑制される。
+  - omment.char="" :: コメント記号("#")を無効にできる。
+      
+  課題 8: 課題 7-1 の表をタブ区切りファイルとして保存し、データフレー
+  ムとして読み込んでみましょう。
+
+* 9. ファイルへの書き出し (データの保存)
+
+  ファイル出力を行なう関数
+
+** write関数
+   - 一番簡単なのが write 関数でしょう。
+   - 変数に格納された数値をファイルに書き出すことができます。
+
+  #+begin_src R :tangle R-intro/code/09.R
+
+x <- c(10, 12, 15, 19, 21, 34)
+write(x, "R-intro/data/outfile1.txt", ncolumns = 1)
+
+  #+end_src
+
+  #+RESULTS:
+
+  - x の内容が R-intro/data/outfile1.txtというファイルに書き込まれます。
+  - ncolumns = 1 は数 値を1 列で出力することを指定しています。
+
+  行列データもファイルに書き出すことが可能で す。
+
+  #+begin_src R :tangle R-intro/code/09.R
+
+x <- matrix(c(1,2,3,4,5,6), nrow=2, ncol=3, byrow=T)
+write(t(x), "R-intro/data/outfile2.txt", ncolumns=ncol(x), sep="\t") 
+
+  #+end_src
+
+  #+RESULTS:
+   
+
+
+  - t(x)  :: 行列 x を転置しないと、出力されるファイル中の行列が転置
+    されたものになってしまうので、注意が必要です。
+  - ncolumns=ncol(x) :: で出力される列数を行列 x の列数に揃え、
+  - sep = “\t” :: でタブ区切りファイルにすることを指定しています。
+
+** write.table関数
+
+   データフレームをファイルに出力する関数
+   #+begin_src R :tangle R-intro/code/09.R
+
+batters[,c(3,4)]
+write.table(batters[,c(3,4)], "R-intro/data/outfile3.txt", sep="=\t", row.names=T, col.names=NA)
+
+   #+end_src
+
+   #+RESULTS:
+   :          Hits Home_Runs
+   : Nomura   2901       657
+   : Harimoto 3085       504
+   : Kinugasa 2543       504
+   : Oh       2786       868
+   : Kadota   2566       567
+
+   - row.names=T :: 行名(先頭に空白を挿入)を入れます。 
+   - col.names=NA ::  でそれぞれ行名、列名(先頭に空白を挿入)を入れます。 
+   - quote=F :: 指定すると、二重引用符を除いた出力になります。
+
+   課題 9: 上記データフレームで、各バッターに対して打率、すなわち Hits / At_Bat を計算
+ し、その結果を”outfile4.txt”に格納しましょう。
+
+* 10. プログラムの読み込み
+
+  一連の手続きをファイルにしておいて、それを必要なときに実行すること
+  が可能です。
+
+  例えば、以下のような操作を記述したファイ ルを用意します。
+  ファイル名を R-intro/code/substtest.R とします。
+
+  #+begin_src R :tangle R-intro/code/substtest.R
+
+x <- c(1,2,3,4,5)
+y <- c(2,4,6,8,10)
+z <- x + y
+
+  #+end_src
+
+  これを以下のように source(“substtest.R”)とすると、substtest.R 中に
+  記述された手続きを 実行することができます。結果として x, y, z それぞ
+  れに値が代入されます。
+
+  #+begin_src R :tangle R-intro/code/0403.R
+
+source("R-intro/code/substtest.R")
+c(x,y,z)
+  #+end_src
+
+  #+RESULTS:
+  :  [1]  1  2  3  4  5  2  4  6  8 10  3  6  9 12 15
+
+  課題 10: 課題 8 の手続きを dframetest.R というファイルに書き込み、
+  source を使ってその 手続きを実行してみましょう。14
+
+
+* 11. 関数の定義
+
+  関数は数学的にはある入力に対応した出力を返すものです。
+
+  コンピュータプログラミングでは、まとまった処理の単位を表します8。
+
+  例えば今、二つの数を足して 2 で割る関数 plus を考えます。
+
+  これは数学では plus(x, y) = (x + y) / 2 などと記述できます。
+   
+** function(引数リスト) { 関数本体 }
+    
+   R では以下のよう に function を使って以下のように記述します。
+
+   #+begin_src R :tangle R-intro/code/0403.R
+
+plus <- function(x, y) {
+  return ((x + y) / 2)
+}
+plus
+plus(10,20)
+   #+end_src
+
+   #+RESULTS:
+   : function(x, y) {
+   :   return ((x + y) / 2)
+   : }
+   : [1] 15
+
+ - これによって x と y を入力(引数)とする関数 plus が定義されます。
+   出力(返り値)が(x + y) / 2 となる。
+ - その後、  plus(10, 20) とすれば、
+   - x に 10、y に 20 が代入され、
+   - 関数plusが実行され，
+   - return は最終的な返り値を決め,
+   - 計算結果の 15 という答えが返ってくる。
+       関数のより一般的な定義の仕方は、
+
+	
+** 関数の一般的な定義の
+
+   #+begin_src R :tangle R-intro/code/0403.R
+
+
+  関数名 <- function (引数 1, 引数 2, ···, ...) {
+    引数を使った様々な処理
+    return(返り値)
+  } 
+   #+end_src
+
+*** 課題 11:
+
+    f(x, a, b, c) = ax2 + bx + c を R の関数として実装しましょう。
+    f(4, 3, 2, 1)はいくつ になりますか。
+

@@ -1,3 +1,24 @@
+       
+* 講義用のページ
+
+https://wiki.cis.iwate-u.ac.jp/~suzuki/Lects/stat
+  
+* zoom 情報
+
+リモートで講義を受けるときに
+
+- zoom id: suzuki@iwate-u.ac.jp
+
+- meeing info:
+
+  URL: https://zoom.us/j/5280602571?pwd=WFNlRmYxcHVaRXV3eW10dkswVVFWdz09
+  ID: 528 060 2571
+  password: 0yzsb1
+
+  
+
+
+
 * 講義が難しい？
 
 ** 微分や積分は，確率統計を語るための，言葉です。
@@ -33,23 +54,4 @@
       同じこと(概念)は何で，
        違うこと，付け加わること，が何か
 
-
-       
-* 講義用のページ
-
-https://wiki.cis.iwate-u.ac.jp/~suzuki/Lects/stat
-  
-* zoom 情報
-
-リモートで講義を受けるときに
-
-- zoom id: suzuki@iwate-u.ac.jp
-
-- meeing info:
-
-  URL: https://zoom.us/j/5280602571?pwd=WFNlRmYxcHVaRXV3eW10dkswVVFWdz09
-  ID: 528 060 2571
-  password: 0yzsb1
-
-  
 

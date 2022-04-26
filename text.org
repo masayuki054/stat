@@ -26,3 +26,12 @@
     
 ** 確率分布の例題
   - 4章 確率変数の分布
+
+* 確率とは
+
+- [[https://www.youtube.com/watch?v=fGWH4Oh0my0][The probability is the area / 確率は面積である Associate Professor Makiko Sasada, Mathematics - YouTube]]
+- [[https://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87][確率 - Wikipedia]],
+- [[https://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E8%AB%96][確率論 - Wikipedia]]
+
+
+  

@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-26 火 21:36 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>確率統計2022 2021年の講義の進行</title>
+<meta name="author" content="suzuki@iwate-u.ac.jp" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
+<link rel="stylesheet" type="text/css" href="http://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
+<link rel="stylesheet" type="text/css" href="http://www.pirilampo.org/styles/bigblow/css/hideshow.css"/>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery-ui-1.10.2.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.localscroll-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.scrollTo-1.4.3.1-min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/jquery.zclip.min.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
+<script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        displayAlign: "center",
+        displayIndent: "0em",
+
+        "HTML-CSS": { scale: 100,
+                        linebreaks: { automatic: "false" },
+                        webFont: "TeX"
+                       },
+        SVG: {scale: 100,
+              linebreaks: { automatic: "false" },
+              font: "TeX"},
+        NativeMML: {scale: 100},
+        TeX: { equationNumbers: {autoNumber: "AMS"},
+               MultLineWidth: "85%",
+               TagSide: "right",
+               TagIndent: ".8em"
+             }
+});
+</script>
+<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+<div id="content" class="content">
+<h1 class="title">確率統計2022 2021年の講義の進行</h1>
+
+<div id="outline-container-org7a39722" class="outline-2">
+<h2 id="org7a39722">確率と確率空間</h2>
+<div class="outline-text-2" id="text-org7a39722">
+</div>
+<div id="outline-container-orge981e58" class="outline-3">
+<h3 id="orge981e58">1.1 標本空間と事象</h3>
+<div class="outline-text-3" id="text-orge981e58">
+<ul class="org-ul">
+<li>確率における標本空間と事象に関する言葉の定義，
+その定義を，集合の言葉での解釈する
+<dl class="org-dl">
+<dt>標本空間</dt><dd>すべての根源事象の集合</dd>
+<dt>事象</dt><dd>標本空間の部分集合</dd>
+</dl></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org7fea50c" class="outline-3">
+<h3 id="org7fea50c">1.2 確率の定義</h3>
+<div class="outline-text-3" id="text-org7fea50c">
+<ul class="org-ul">
+<li>P(A)</li>
+<li>事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org39d7dca" class="outline-3">
+<h3 id="org39d7dca">1.3 確率の性質</h3>
+<div class="outline-text-3" id="text-org39d7dca">
+<ul class="org-ul">
+<li>確率の公理</li>
+<li>排反な事象</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org956b4bd" class="outline-3">
+<h3 id="org956b4bd">1.4 条件付確率</h3>
+<div class="outline-text-3" id="text-org956b4bd">
+<ul class="org-ul">
+<li>\(P(B|A) = P(A) P(B \cup A)\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org9b0dbc4" class="outline-3">
+<h3 id="org9b0dbc4">1.5 独立性</h3>
+<div class="outline-text-3" id="text-org9b0dbc4">
+<ul class="org-ul">
+<li>\(P(B) = P(B|A)\) なら独立， 事象A と 事象B は無関係</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge5c8d50" class="outline-3">
+<h3 id="orge5c8d50">1.6 ベイズの定理</h3>
+<div class="outline-text-3" id="text-orge5c8d50">
+<ul class="org-ul">
+<li>\(P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}\)
+<ul class="org-ul">
+<li>\(P(A\cap B_i) = P(B_i) P(A|B_i)\)</li>
+<li>\(P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgfe3207f" class="outline-3">
+<h3 id="orgfe3207f">1.7 例</h3>
+<div class="outline-text-3" id="text-orgfe3207f">
+<ul class="org-ul">
+<li>くじをひく順番で当る確率が違うのか</li>
+<li>システム全体の故障率</li>
+<li>この検査は信頼できるのか</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd81b845" class="outline-3">
+<h3 id="orgd81b845">1.8 確率空間 とばす，2.9 と一緒に</h3>
+<div class="outline-text-3" id="text-orgd81b845">
+<p>
+事象と確率を考える，確率モデル。
+</p>
+
+<ul class="org-ul">
+<li>標本空間 \(\Omega\)</li>
+<li>事象の集合 A</li>
+<li>確率関数 P:A-&gt;R</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org479b9fb" class="outline-2">
+<h2 id="org479b9fb">確率変数と確率分布</h2>
+<div class="outline-text-2" id="text-org479b9fb">
+</div>
+<div id="outline-container-org1c8a80f" class="outline-3">
+<h3 id="org1c8a80f">2.1　確率変数と確率分布</h3>
+<div class="outline-text-3" id="text-org1c8a80f">
+<dl class="org-dl">
+<dt>確率変数 (r.v.) X</dt><dd>random variable
+<ul class="org-ul">
+<li>事象に対し，数値を与える，</li>
+<li>数値に出現は，確率関数または確率密度関数にしたがう</li>
+</ul></dd>
+
+<dt>確率関数 (p.f.) \(f(n)\)</dt><dd>probability function
+<ul class="org-ul">
+<li>離散的な事象の確率を与える関数</li>
+</ul></dd>
+
+<dt>確率密度関数 (p.d.f.) \(f(x)\)</dt><dd>probability density function  
+<ul class="org-ul">
+<li>連続的な事象の出現確率を決定するための関数</li>
+
+<li>\(P(a< X \leq b) = \int_{a}^{b} f(x) dx\)</li>
+</ul></dd>
+
+<dt>(no term)</dt><dd>(累積)分布関数 (c.d.f) \(F(x)\):: cummulative distribution function
+<ul class="org-ul">
+<li>\(F(x) = P(X \leq x)  = \int_{-\infty}^{x} f(t) dt\)</li>
+<li>\(f(x) = \frac{d F(x)}{dx}\)</li>
+</ul></dd>
+</dl>
+</div>
+</div>
+
+<div id="outline-container-orgd414950" class="outline-3">
+<h3 id="orgd414950">2.2 期待値と平均と分散</h3>
+<div class="outline-text-3" id="text-orgd414950">
+<p>
+確率密度関数を用いた統計値の計算について:    
+</p>
+
+<ul class="org-ul">
+<li>平均値と期待値と線形変換</li>
+<li>分散と線形変換</li>
+<li>標準偏差</li>
+<li>標準化</li>
+
+<li>g(X)の期待値: 試行における，確率変数による式 g(X) の平均値</li>
+
+<li>平均 == X の期待値 = E[X] = μ</li>
+<li>分散 == (X-E[X])2 = V[X] = E[x2]-E[X]2 = σ2</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org43fc3b8" class="outline-2">
+<h2 id="org43fc3b8">2.9　確率変数と確率分布と確率空間</h2>
+<div class="outline-text-2" id="text-org43fc3b8">
+<p>
+(Ω, A, P) の三つ組
+</p>
+</div>
+</div>
+
+
+<div id="outline-container-org8c2733b" class="outline-2">
+<h2 id="org8c2733b">いろいろな確率分布</h2>
+<div class="outline-text-2" id="text-org8c2733b">
+</div>
+<div id="outline-container-org87a8577" class="outline-3">
+<h3 id="org87a8577">3.1 離散型確率分布</h3>
+<div class="outline-text-3" id="text-org87a8577">
+<ul class="org-ul">
+<li>一様分布</li>
+<li>ベルヌーイ分布</li>
+<li><p>
+二項分布
+</p>
+
+<p>
+\( _nC_k p^k (1-p)^{(n-k)} \)
+</p></li>
+</ul>
+<ul class="org-ul">
+<li><p>
+ポアソン分布
+</p>
+
+<p>
+\( \frac{\lambda^k}{k!}e^{-\lambda} \)
+</p></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8b0b5d2" class="outline-3">
+<h3 id="org8b0b5d2">3.2 連続型確率分布</h3>
+<div class="outline-text-3" id="text-org8b0b5d2">
+<ul class="org-ul">
+<li>一様分布</li>
+
+<li><p>
+指数分布
+</p>
+
+<p>
+\( P(X > x+y ) = P(X>x) \times P(X>y) \) 
+</p></li>
+
+<li>指数分布の分布関数</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org87fb364" class="outline-3">
+<h3 id="org87fb364">3.2 連続型確率分布</h3>
+<div class="outline-text-3" id="text-org87fb364">
+<ul class="org-ul">
+<li>正規分布</li>
+
+<li>ガンマ分布 (多次元分布の学習後)</li>
+<li>カイ二乗分布とt-分布 (多次元分布の学習後)</li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2072c36" class="outline-3">
+<h3 id="org2072c36">3.4 確率分布の平均と分散</h3>
+</div>
+
+<div id="outline-container-orgc64fba6" class="outline-3">
+<h3 id="orgc64fba6">3.6　モーメント母関数</h3>
+<div class="outline-text-3" id="text-orgc64fba6">
+<p>
+分布関数をユニークに特徴付ける表現
+</p>
+
+<ul class="org-ul">
+<li>母関数という考え方
+<ul class="org-ul">
+<li>N-次モーメントを係数にもつべき級数にクローズド形が存在すると，</li>
+<li>それはクローズド形マクローリン展開と考えられる</li>
+<li>N-次モーメントは，N-次微分によって得られる</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org9e6dda2" class="outline-2">
+<h2 id="org9e6dda2">確率変数と確率分布 (多次元)</h2>
+<div class="outline-text-2" id="text-org9e6dda2">
+</div>
+<div id="outline-container-org9956342" class="outline-3">
+<h3 id="org9956342">2.3 多次元確率変数と同時確率分布と周辺確率分布</h3>
+<div class="outline-text-3" id="text-org9956342">
+<ul class="org-ul">
+<li>多次元分布の記述の定義</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb983a72" class="outline-3">
+<h3 id="orgb983a72">2.4 多次元確率変数の特性値</h3>
+<div class="outline-text-3" id="text-orgb983a72">
+<ul class="org-ul">
+<li>平均</li>
+<li>分散</li>
+<li>共分散</li>
+<li>相関係数</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org76ad7a1" class="outline-3">
+<h3 id="org76ad7a1">2.5 確率変数の独立性</h3>
+<div class="outline-text-3" id="text-org76ad7a1">
+<ul class="org-ul">
+<li>変数毎の1変数関数の積になるということ</li>
+<li>独立なら無相関</li>
+<li>独立なら共分散は0</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6fa5d89" class="outline-3">
+<h3 id="org6fa5d89">2.6 確率変数の和の平均と分散</h3>
+</div>
+
+<div id="outline-container-org3716fd8" class="outline-3">
+<h3 id="org3716fd8">2.7 確率変数の条件付確率分布</h3>
+<div class="outline-text-3" id="text-org3716fd8">
+<ul class="org-ul">
+<li>f(x,y)と x=x0 の曲線</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8259472" class="outline-3">
+<h3 id="org8259472">2.8 確率とモーメントに関連した不等式</h3>
+<div class="outline-text-3" id="text-org8259472">
+<ul class="org-ul">
+<li>Chebyshevの不等式
+
+<ul class="org-ul">
+<li>平均との差がeとなる確率</li>
+<li><blockquote>
+<p>
+分散/e**2
+</p>
+</blockquote></li>
+</ul></li>
+
+<li>Cauchy-Schwartz
+
+<ul class="org-ul">
+<li>分散積&gt;=共分散の積</li>
+</ul></li>
+
+<li>Jensen
+
+<ul class="org-ul">
+<li>下に凸な関数 h(x)</li>
+<li>E[h(X)] &gt;= h(E[X])</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6d7f2c7" class="outline-3">
+<h3 id="org6d7f2c7">2.4 多次元確率変数の特性値</h3>
+<div class="outline-text-3" id="text-org6d7f2c7">
+<ul class="org-ul">
+<li>平均</li>
+<li>分散</li>
+<li>共分散</li>
+<li>相関係数</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgeb4960a" class="outline-3">
+<h3 id="orgeb4960a">2.5 確率変数の独立性</h3>
+<div class="outline-text-3" id="text-orgeb4960a">
+<ul class="org-ul">
+<li>変数毎の1変数関数の積になるということ</li>
+<li>独立なら無相関</li>
+<li>独立なら共分散は0</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org813b0e8" class="outline-3">
+<h3 id="org813b0e8">2.6 確率変数の和の平均と分散</h3>
+</div>
+
+<div id="outline-container-orge886012" class="outline-3">
+<h3 id="orge886012">2.7 確率変数の条件付確率分布</h3>
+<div class="outline-text-3" id="text-orge886012">
+<ul class="org-ul">
+<li>f_x(x) のグラフ</li>
+<li>f_y(y) のグラフ</li>
+<li>X と Y が独立なときの f(x, y) = f_x(x)&times; f_y(y) のグラフ</li>
+<li>x=x0 の曲線 f(x0, y) X=x0 の条件</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ab913f" class="outline-2">
+<h2 id="org9ab913f">いろいろな確率分布</h2>
+<div class="outline-text-2" id="text-org9ab913f">
+</div>
+<div id="outline-container-orge11f496" class="outline-3">
+<h3 id="orge11f496">3.3 多次元確率分布</h3>
+<div class="outline-text-3" id="text-orge11f496">
+<ul class="org-ul">
+<li>多項分布</li>
+<li>多次元正規分布</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org683ff23" class="outline-3">
+<h3 id="org683ff23">3.4 確率分布の平均と分散</h3>
+<div class="outline-text-3" id="text-org683ff23">
+<ul class="org-ul">
+<li>講義予定
+<ul class="org-ul">
+<li>7/22 多次元分布関数，確率変数の変数変換</li>
+<li>7/29 確率変数の変数変換</li>
+<li>8/5  確率変数の変数変換</li>
+</ul></li>
+</ul>
+
+
+<ul class="org-ul">
+<li>4章変数変換 <a href="https://drive.google.com/drive/folders/1Aal90038yMW8gjCoLj8uMb_WOxPmVbIk">stat2_06_1107 - Google ドライブ</a></li>
+<li>4章変数変換 <a href="https://drive.google.com/drive/folders/1FZiAWpoZaU0kBdA77XnbYqfpNFZOqLWJ">stat2_07_1122 - Google ドライブ</a></li>
+<li>4章変数変換<a href="https://drive.google.com/drive/folders/1cyqJjwz7PbMWrIkHWAH9jfs6uw8ynXBt"> stat2_08_1129 - Google ドライブ</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org69550fb" class="outline-3">
+<h3 id="org69550fb">3.5 多次元正規分布の性質</h3>
+<div class="outline-text-3" id="text-org69550fb">
+<ul class="org-ul">
+<li><p>
+周辺確率分布の計算
+</p>
+
+<p>
+他の確率変数に関して，全域で部分積分すること
+</p></li>
+
+<li>多次元分布関数のグラフによる理解
+<ul class="org-ul">
+<li>同時確率密度関数のグラフ</li>
+<li>同時確率密度関数のグラフと周辺確率密度関数のグラフ</li>
+<li>条件付確率密度関数のグラフ</li>
+</ul></li>
+
+<li>独立性が積となることの確認</li>
+
+<li><p>
+2次元正規分布について，指数関数のべき乗部の二次式について
+</p>
+<ul class="org-ul">
+<li>正定値対象行列 <a href="https://www.or.mist.i.u-tokyo.ac.jp/kanno/lecture/math_design/psd170420.pdf">psd170420.pdf</a></li>
+</ul>
+<p>
+<a href="https://mathtrain.jp/quadraticform">- 二次形式の意味，微分，標準形など | 高校数学の美しい物語</a>
+</p>
+<ul class="org-ul">
+<li>x^2+y^2 なら X と Y は独立</li>
+<li>平行移動 $ (x-mu_x)^2+(y-&mu;_y)^2 $ なら X と Y は独立
+
+<ul class="org-ul">
+<li>$ (2(x+y)^2+(x-y)^2) $ なら X と Y は独立ではない
+3x^2 + 2xy + 3y^2 
+Sigma = [3, 1]
+	[1, 3]</li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgcb40afb" class="outline-2">
+<h2 id="orgcb40afb">確率変数の変数変換</h2>
+<div class="outline-text-2" id="text-orgcb40afb">
+</div>
+<div id="outline-container-org988b94c" class="outline-3">
+<h3 id="org988b94c">4.1 線形変換された確率変数の確率分布</h3>
+<div class="outline-text-3" id="text-org988b94c">
+<ul class="org-ul">
+<li>線形変換 前回は，線形変換の立場から，確率変数の変数の</li>
+<li>一般の1変数の変数変換
+<ul class="org-ul">
+<li>合成関数</li>
+<li>多変数の変数変換
+<ul class="org-ul">
+<li>$ \vec{\vec{Y}} = \vec{g}(\vec{X}) = [g_i(\vec{X})] $
+g_i は多変数関数: R^n -&gt; R</li>
+
+<li>$ \vec{g} の 微小変化 (ヤコビ行列) $
+<ul class="org-ul">
+<li><a href="https://mathtrain.jp/jacobian">ヤコビ行列，ヤコビアンの定義と極座標の例 | 高校数学の美しい物語</a></li>
+<li><a href="https://ja.wikipedia.org/wiki/%E3%83%A4%E3%82%B3%E3%83%93%E8%A1%8C%E5%88%97">ヤコビ行列 - Wikipedia</a></li>
+<li>変換の大きさ</li>
+<li>微小変化の体積</li>
+<li><a href="https://ja.wikipedia.org/wiki/%E8%A1%8C%E5%88%97%E5%BC%8F">行列式 - Wikipedia</a></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>確率分布の変数変換
+<ol class="org-ol">
+<li>P(a&lt;X&lt;b) = P(g(a)&lt;Y&lt;g(b))</li>
+<li>F_x(a, b) = int(f_(x), a, b) = int(f_y(x), g(a), g(b)) =
+F_y(g(a), g(b))</li>
+<li>f_x(x) dx = f_y(y) dy</li>
+</ol></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgb6adc02" class="outline-3">
+<h3 id="orgb6adc02">4.1 線形変換された確率変数の確率分布</h3>
+<div class="outline-text-3" id="text-orgb6adc02">
+<ul class="org-ul">
+<li>確率分布の変数変換
+
+<ol class="org-ol">
+<li>P(a&lt;X&lt;b) = P(g(a)&lt;Y&lt;g(b))</li>
+<li>F_x(a, b) = int(f_(x), a, b) = &int;(f_y(x), g(a), g(b)) =
+F_y(g(a), g(b))</li>
+<li>f_x(x) dx = f_y(y) dy</li>
+</ol></li>
+</ul>
+
+<p>
+$ Y = X^2 $, $ X ~ N(0,1) $, 
+</p>
+
+<p>
+\( Y = \sum_n X_i^2, X_i ~ N(0,1) \)
+</p>
+
+<ul class="org-ul">
+<li><a href="https://ja.wikipedia.org/wiki/%E3%82%AB%E3%82%A4%E4%BA%8C%E4%B9%97%E5%88%86%E5%B8%83">カイ二乗分布 - Wikipedia</a></li>
+<li><a href="https://bellcurve.jp/statistics/course/9208.html">22-1. カイ二乗分布 | 統計学の時間 | 統計WEB</a></li>
+
+<li>ガンマ分布，カイ二乗分布 <a href="https://drive.google.com/drive/u/0/folders/1zxoKIR5XoHI6HyDjCozhgq2UKeOV234g">lect-note - Google ドライブ</a></li>
+
+<li><a href="https://mathtrain.jp/gamma">ガンマ関数（階乗の一般化）の定義と性質 | 高校数学の美しい物語</a></li>
+
+<li><a href="https://mathtrain.jp/chisquare">正規分布の二乗和がカイ二乗分布に従うことの証明 | 高校数学の美しい物語</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org49857c6" class="outline-3">
+<h3 id="org49857c6">4.2 独立な確率変数の和の確率分布</h3>
+</div>
+
+<div id="outline-container-org2e854f7" class="outline-3">
+<h3 id="org2e854f7">4.3 確率変数の最大値と最小値の確率分布</h3>
+</div>
+
+<div id="outline-container-orgb3cf380" class="outline-3">
+<h3 id="orgb3cf380">4.4 変数変換された連続型確率変数の確率分布</h3>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb079929" class="outline-2">
+<h2 id="orgb079929">14回目 期末テスト</h2>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: suzuki@iwate-u.ac.jp</p>
+<p class="date">Created: 2022-04-26 火 21:36</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>

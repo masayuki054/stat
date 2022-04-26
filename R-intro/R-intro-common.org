@@ -1,0 +1,5 @@
+#+setupfile: ../info/index-bigblow-header.setup
+#+include: ../info/common-header.org
+#+title: 初心者用 R 言語講座演習ノート
+#+OPTIONS: tex:t 
+#+PROPERTY: header-args:R :session *R* :results output :exports both

@@ -3,11 +3,11 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-26 火 21:25 -->
+<!-- 2022-04-26 火 21:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>確率統計2022 確率統計 (2) 2022/04/27</title>
-<meta name="author" content="suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師" />
+<title>確率統計2022 確率統計 2022 前期</title>
+<meta name="author" content="suzuki@iwate-u.ac.jp" />
 <meta name="generator" content="Org Mode" />
 <style>
   #content { max-width: 60em; margin: auto; }
@@ -204,248 +204,192 @@
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/bigblow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/bigblow/js/hideshow.js"></script>
 <script type="text/javascript" src="http://www.pirilampo.org/styles/lib/js/jquery.stickytableheaders.min.js"></script>
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        displayAlign: "center",
-        displayIndent: "0em",
-
-        "HTML-CSS": { scale: 100,
-                        linebreaks: { automatic: "false" },
-                        webFont: "TeX"
-                       },
-        SVG: {scale: 100,
-              linebreaks: { automatic: "false" },
-              font: "TeX"},
-        NativeMML: {scale: 100},
-        TeX: { equationNumbers: {autoNumber: "AMS"},
-               MultLineWidth: "85%",
-               TagSide: "right",
-               TagIndent: ".8em"
-             }
-});
-</script>
-<script src="http://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">確率統計2022 確率統計 (2) 2022/04/27</h1>
-<div id="outline-container-orgfcb16be" class="outline-2">
-<h2 id="orgfcb16be">出席登録</h2>
-<div class="outline-text-2" id="text-orgfcb16be">
-<p>
-<a href="https://lms.iwate-u.ac.jp/webclass/course.php/22S6211/manage/?acs_=7a0611dd">確率統計学 [22S6211] - WebClass</a>
-</p>
-</div>
-</div>
+<h1 class="title">確率統計2022 確率統計 2022 前期</h1>
 
-<div id="outline-container-org2bbe6af" class="outline-2">
-<h2 id="org2bbe6af">R/RStudio</h2>
-<div class="outline-text-2" id="text-org2bbe6af">
-</div>
-<div id="outline-container-orgd604943" class="outline-3">
-<h3 id="orgd604943">RStudio</h3>
-<div class="outline-text-3" id="text-orgd604943">
-<p>
-RStudioを使って, Rを学び, Rmarkdown文書として纏めましょう:
-</p>
-</div>
-</div>
-
-<div id="outline-container-org9756228" class="outline-3">
-<h3 id="org9756228"><span class="todo Todo">Todo</span> <a href="https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html">R/RStudio入門</a></h3>
-</div>
-
-
-<div id="outline-container-org5e16bd1" class="outline-3">
-<h3 id="org5e16bd1"><span class="todo Todo">Todo</span> R markdown</h3>
-<div class="outline-text-3" id="text-org5e16bd1">
-<p>
-R プログラムとその出力，解説を含むドキュメントの作成に用います。
-すごく便利です。
-</p>
-
-<p>
-プログラムの開発，デバッグ，ドキュメンテーションが，一つのファイルで行
-えます。
-</p>
-
-<p>
-本講義でのプログラム作成は，これを用いましょう。
-</p>
-
+<div id="outline-container-org88600b4" class="outline-2">
+<h2 id="org88600b4">今日の講義</h2>
+<div class="outline-text-2" id="text-org88600b4">
 <ul class="org-ul">
-<li><a href="https://kazutan.github.io/kazutanR/Rmd_intro.html">R Markdown入門</a> <a href="https://qiita.com/tomotagwork/items/c92fb40a76f56ea16aa4">R Markdownによるレポート生成 - Qiita</a></li>
-<li><a href="https://rpubs.com/ktgrstsh/755893">RPubs - Tokyo.R #91 R Markdown 入門補足資料</a></li>
-</ul>
-</div>
-
-<div id="outline-container-orgf7b0b23" class="outline-4">
-<h4 id="orgf7b0b23">emacs org-mode</h4>
-<div class="outline-text-4" id="text-orgf7b0b23">
-<p>
-が，講師は，もっと便利で汎用な，emacs org-mode を使っています。RStudio
-は使いたくありません。悪しからず。
-</p>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgcf798ad" class="outline-3">
-<h3 id="orgcf798ad"><span class="done Someday">Someday</span> 数式の表現</h3>
-</div>
-<div id="outline-container-org780126e" class="outline-3">
-<h3 id="org780126e"><span class="todo Todo">Todo</span> R 言語 入門</h3>
-<div class="outline-text-3" id="text-org780126e">
-<ul class="org-ul">
-<li><a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a></li>
-</ul>
-
-<p>
-プログラム言語としての機能を学び，RStudioを用いて，Rmarkdown文書を作成
-しましょう。
-</p>
-</div>
-</div>
-
-<div id="outline-container-orgfb5550c" class="outline-3">
-<h3 id="orgfb5550c"><span class="done Someday">Someday</span> Rの設定など</h3>
-<div class="outline-text-3" id="text-orgfb5550c">
-<p>
-R/RStudioの利用環境設定などの参考にしましょう。
-</p>
-
-<ul class="org-ul">
-<li><a href="https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html">Rの初歩</a></li>
-</ul>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org2895c04" class="outline-2">
-<h2 id="org2895c04"><span class="todo Todo">Todo</span> 確率と統計</h2>
-<div class="outline-text-2" id="text-org2895c04">
-<p>
-<a href="./notes/">講義ノート</a>
-</p>
-</div>
-
-<div id="outline-container-org28177e7" class="outline-3">
-<h3 id="org28177e7">確率と確率空間</h3>
-<div class="outline-text-3" id="text-org28177e7">
-</div>
-<div id="outline-container-org262aaab" class="outline-4">
-<h4 id="org262aaab">1.1 標本空間と事象</h4>
-<div class="outline-text-4" id="text-org262aaab">
-<ul class="org-ul">
-<li>確率における標本空間と事象に関する言葉の定義，
-その定義を，集合の言葉での解釈する
-<dl class="org-dl">
-<dt>標本空間</dt><dd>すべての根元事象の集合</dd>
-<dt>事象</dt><dd>標本空間の部分集合</dd>
-<dt>全ての事象の集合(族)</dt><dd>集合の和で閉じている(完全加法族)</dd>
-<dt>確率 (測度) 関数 P</dt><dd>事象Aの生起確率を \( P(A) \)と</dd>
-</dl></li>
+<li><a href="./today.html">./today.html</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-orge86167b" class="outline-4">
-<h4 id="orge86167b">1.2 確率の定義</h4>
-<div class="outline-text-4" id="text-orge86167b">
+<div id="outline-container-orgb95b048" class="outline-2">
+<h2 id="orgb95b048">教材</h2>
+<div class="outline-text-2" id="text-orgb95b048">
 <ul class="org-ul">
-<li>P(A) : 確率関数，P, Aは事象， P(A)はAが起こる確率</li>
-<li>事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。</li>
+<li><a href="./text.html">./text.html</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org3fc6bdc" class="outline-4">
-<h4 id="org3fc6bdc">1.3 確率の性質</h4>
-<div class="outline-text-4" id="text-org3fc6bdc">
+<div id="outline-container-org1e27ae2" class="outline-2">
+<h2 id="org1e27ae2">講義ノート</h2>
+<div class="outline-text-2" id="text-org1e27ae2">
 <ul class="org-ul">
-<li>確率の公理</li>
-<li>排反な事象</li>
+<li><a href="./notes/2022-stat-01章.pdf">./notes/2022-stat-01章.pdf</a></li>
+<li><a href="./notes/2022-stat-02章1部一変数.pdf">./notes/2022-stat-02章1部一変数.pdf</a></li>
+<li><a href="./notes/2022-stat-03章1部一変数.pdf">./notes/2022-stat-03章1部一変数.pdf</a></li>
+<li><a href="./notes/2022-stat-02章2部多変数.pdf">./notes/2022-stat-02章2部多変数.pdf</a></li>
+<li><a href="./notes/2022-stat-03章2部多変数.pdf">./notes/2022-stat-03章2部多変数.pdf</a></li>
+<li><a href="./notes/2022-stat-04章変数変換.pdf">./notes/2022-stat-04章変数変換.pdf</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org5f26ef7" class="outline-4">
-<h4 id="org5f26ef7">1.4 条件付確率</h4>
-<div class="outline-text-4" id="text-org5f26ef7">
+<div id="outline-container-org64b7c0e" class="outline-2">
+<h2 id="org64b7c0e">講義メモ</h2>
+<div class="outline-text-2" id="text-org64b7c0e">
 <ul class="org-ul">
-<li>\(P(B|A) = P(A) P(B \cup A)\)</li>
+<li><a href="https://drive.google.com/drive/u/0/folders/1nGs6svr0actrLPmtz6onPuj2eUrHMQ8M">note - Google ドライブ</a></li>
+
+<li>中心極限定理
+<a href="http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf">http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org2691440" class="outline-4">
-<h4 id="org2691440">1.5 独立性</h4>
-<div class="outline-text-4" id="text-org2691440">
+<div id="outline-container-orga865203" class="outline-2">
+<h2 id="orga865203">ガイダンス</h2>
+<div class="outline-text-2" id="text-orga865203">
+</div>
+<div id="outline-container-org8ede6eb" class="outline-3">
+<h3 id="org8ede6eb">シラバス</h3>
+<div class="outline-text-3" id="text-org8ede6eb">
+<p>
+<a href="https://ia2.iwate-u.ac.jp/websyllabus/kyouin/slbsCtlDspKyouin.php?type=top">アイアシスタント</a>
+</p>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org1f07b97" class="outline-2">
+<h2 id="org1f07b97">2021 の確率統計学</h2>
+<div class="outline-text-2" id="text-org1f07b97">
+</div>
+<div id="outline-container-orge689599" class="outline-3">
+<h3 id="orge689599">オンライン講義 2021 前期</h3>
+<div class="outline-text-3" id="text-orge689599">
 <ul class="org-ul">
-<li>\(P(B) = P(B|A)\) なら独立， 事象A と 事象B は無関係</li>
+<li><a href="./today-2021-06-02.html">./today-2021-06-02.html</a></li>
+<li><a href="./today=2021-06-16.html">./today=2021-06-16.html</a></li>
 </ul>
 </div>
 </div>
 
-<div id="outline-container-org7c07327" class="outline-4">
-<h4 id="org7c07327">1.6 ベイズの定理</h4>
-<div class="outline-text-4" id="text-org7c07327">
+
+<div id="outline-container-org449b9f8" class="outline-3">
+<h3 id="org449b9f8">「Rによるやさしい統計学」の演習</h3>
+<div class="outline-text-3" id="text-org449b9f8">
+</div>
+<div id="outline-container-org9c9a2c0" class="outline-4">
+<h4 id="org9c9a2c0">教科書</h4>
+<div class="outline-text-4" id="text-org9c9a2c0">
+<p>
+<a href="https://www.ohmsha.co.jp/book/9784274067105/">Rによるやさしい統計学 | Ohmsha</a>
+</p>
+</div>
+</div>
+
+<div id="outline-container-org62aa8d3" class="outline-4">
+<h4 id="org62aa8d3">演習用コンテンツ</h4>
+<div class="outline-text-4" id="text-org62aa8d3">
+<p>
+教科書のまとめ
+</p>
+
 <ul class="org-ul">
-<li>\(P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}\)
+<li>Emacs org-mode版
+<ol class="org-ol">
+<li><a href="./org/RforS-0.html">./org/RforS-0.html</a> (5.26)</li>
+<li><a href="./org/RforS-1.html">./org/RforS-1.html</a> (5.19)</li>
+<li><a href="./org/RforS-2.html">./org/RforS-2.html</a> (5.26)</li>
+</ol></li>
+
+<li>HTML版 <a href="https://masayuki054.github.io/RforS">https://masayuki054.github.io/RforS</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org48ac88c" class="outline-4">
+<h4 id="org48ac88c">関連ページ</h4>
+<div class="outline-text-4" id="text-org48ac88c">
 <ul class="org-ul">
-<li>\(P(A\cap B_i) = P(B_i) P(A|B_i)\)</li>
-<li>\(P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)\)</li>
+<li><a href="https://masayuki054.github.io/RforS">https://masayuki054.github.io/RforS</a></li>
+<li><a href="https://github.com/masayuki054/RforS">https://github.com/masayuki054/RforS</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3b595cb" class="outline-4">
+<h4 id="org3b595cb">ブログ</h4>
+<div class="outline-text-4" id="text-org3b595cb">
+<ul class="org-ul">
+<li><a href="http://masayuki054.hatenablog.com/entry/2021/04/20/192843">確率統計学 2021 - masayuki054's diary</a></li>
+<li><a href="http://masayuki054.hatenablog.com/entry/2021/04/20/202703">講義の進行 確率統計2021 - masayuki054's diary</a></li>
+<li><a href="http://masayuki054.hatenablog.com/entry/2021/04/28/083025">レポートと試験のこと 確率統計2021 - masayuki054's diary</a></li>
+<li><a href="http://masayuki054.hatenablog.com/entry/2021/04/20/190718">Rに関すること - masayuki054's diary</a></li>
+<li><a href="http://masayuki054.hatenablog.com/entry/2021/04/20/193244">講義予定 確率統計学 2021 - masayuki054's diary</a></li>
+<li><a href="http://masayuki054.hatenablog.com/entry/2021/04/20/213400">演習問題 確率統計 2021 - masayuki054's diary</a></li>
+<li><a href="http://masayuki054.hatenablog.com/entry/2021/03/14/163010">授業アンケートへの解答 データ解析 2020 - masayuki054's diary</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org5836885" class="outline-4">
+<h4 id="org5836885">ドライブ</h4>
+<div class="outline-text-4" id="text-org5836885">
+<ul class="org-ul">
+<li><a href="https://drive.google.com/drive/folders/1CLc4ys-Z1nBe0gZkicfWfPdXbYK1480w">アンケート - Google ドライブ</a></li>
+<li><a href="https://drive.google.com/drive/folders/1E3kil-he8dK0iGxrEpB4GIsxiJ1N7LKd">2021 - Google ドライブ</a></li>
+<li><a href="https://drive.google.com/drive/u/0/folders/1deXv6LjZU3KXXCjeTJfR2YfB6KEsOtKy">黒板 - Google ドライブ</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org2226582" class="outline-4">
+<h4 id="org2226582">参考サイト  <a href="http://whitewell.sakura.ne.jp/R/contents.html">Introduction to Programming Language R</a></h4>
+<div class="outline-text-4" id="text-org2226582">
+<p>
+<a href="http://whitewell.sakura.ne.jp/R/Rintro-01.html">- R解説(1)</a> 課題をやってみましょう
+</p>
+<ul class="org-ul">
+<li><a href="http://whitewell.sakura.ne.jp/R/Rintro-02.html">R解説(2)</a> 課題をやってみましょう</li>
+<li><a href="http://whitewell.sakura.ne.jp/R/Rintro-03.html">R解説(3)</a> 課題をやってみましょう</li>
+<li><a href="http://whitewell.sakura.ne.jp/R/Rintro-04.html">R解説(4)</a></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-orgf8d68ee" class="outline-4">
+<h4 id="orgf8d68ee">参考サイト</h4>
+<div class="outline-text-4" id="text-orgf8d68ee">
+<ul class="org-ul">
+<li><a href="http://www.cc.aoyama.ac.jp/~t41338/lecture/aoyama/stat2e/stat2e_top.html">社会統計演習</a>    <a href="https://www.ohmsha.co.jp/book/9784274067105/">Rによるやさしい統計学 | Ohmsha</a> の解説動画とデータ</li>
+
+<li><a href="http://www.okadajp.org/RWiki/">RjpWiki - RjpWiki</a></li>
+<li><a href="http://cse.naro.affrc.go.jp/takezawa/r-tips/r2.html">R-Tips</a></li>
+<li><a href="http://whitewell.sakura.ne.jp/R/">Webpage for Probability Theory and Statistics (B)</a>
+<ul class="org-ul">
+<li>教科書に基づいた確率統計の講義サイト</li>
 </ul></li>
 </ul>
 </div>
 </div>
-
-<div id="outline-container-orgb67ce7a" class="outline-4">
-<h4 id="orgb67ce7a">1.7 例</h4>
-<div class="outline-text-4" id="text-orgb67ce7a">
-<ul class="org-ul">
-<li>くじをひく順番で当る確率が違うのか</li>
-<li>システム全体の故障率</li>
-<li>この検査は信頼できるのか</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org1eb14d7" class="outline-4">
-<h4 id="org1eb14d7">1.8 確率空間 とばす，2.9 と一緒に</h4>
-<div class="outline-text-4" id="text-org1eb14d7">
-<p>
-事象と確率を考える，確率モデル。
-</p>
-
-<ul class="org-ul">
-<li>標本空間 \(\Omega\)</li>
-<li>事象の集合 A</li>
-<li>確率関数 P:A-&gt;R</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-
-
-<div id="outline-container-org5813851" class="outline-2">
-<h2 id="org5813851">講義終了後アンケート</h2>
-<div class="outline-text-2" id="text-org5813851">
-<p>
-<a href="https://drive.google.com/drive/u/1/folders/1-YWezVm0nuo-BAcGR9saY_jN1BRA0D1S">アンケート - Google ドライブ</a>  フォルダ
-</p>
-<ul class="org-ul">
-<li>アンケート (任意) <a href="https://forms.gle/bJPq3Gr7XE3iR2DG8">https://forms.gle/bJPq3Gr7XE3iR2DG8</a>
-講義終了後に</li>
-</ul>
 </div>
 </div>
 </div>
 <div id="postamble" class="status">
-<p class="author">Author: suzuki@iwate-u.ac.jp 鈴木正幸，非常勤講師</p>
-<p class="date">Created: 2022-04-26 火 21:25</p>
+<p class="author">Author: suzuki@iwate-u.ac.jp</p>
+<p class="date">Created: 2022-04-26 火 21:21</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
