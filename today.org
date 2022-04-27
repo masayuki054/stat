@@ -6,6 +6,9 @@
 * 出席登録
 [[https://lms.iwate-u.ac.jp/webclass/course.php/22S6211/manage/?acs_=7a0611dd][確率統計学 [22S6211] - WebClass]]
 
+* 講義のやりかたについて
+[[./lect.org]] の講義のやり方について意見を聞きたい
+
 * R/RStudio
 ** RStudio
 
@@ -55,7 +58,7 @@ R/RStudioの利用環境設定などの参考にしましょう。
  - [[./text.org]] の確率とは
  - 教科書と[[./notes/2022-stat-01章.pdf][講義ノート]]
  - [[http://whitewell.sakura.ne.jp/R/Rprobability.html][Rで確率を学ぶ]] (白井)
-
+ - [[https://drive.google.com/drive/u/0/folders/1deXv6LjZU3KXXCjeTJfR2YfB6KEsOtKy][黒板 - Google ドライブ]] 2021年度
 ** 確率と確率空間
 
 *** 1.1 標本空間と事象

@@ -35,7 +35,7 @@
 - https://wiki.cis.iwate-u.ac.jp/~suzuki/Lects/stat/
 - file://~suzuki/Lects/stat
 
-* 2021 の確率統計学
+* 2021の確率統計学
 
 ** オンライン講義 2021 前期
 
