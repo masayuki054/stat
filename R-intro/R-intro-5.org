@@ -1,4 +1,3 @@
-#+include: R-intro-common.org
 #+OPTIONS: tex:t 
 #+PROPERTY: header-args:R :session *bioR* :results output :exports both
 

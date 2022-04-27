@@ -1,6 +1,5 @@
-#+include: R-intro-common.org
 #+PROPERTY: header-args:R :session *bioR* :results output :exports both
-[[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
+
 * 12.グラフの作成
 R では簡単にグラフを作成する関数が用意されています。
    

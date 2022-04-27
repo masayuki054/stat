@@ -90,7 +90,7 @@ R プログラムとその出力，解説を含むドキュメントの作成に
 
 ** Rの設定など
 - [[https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html][Rの初歩]]
-
+  
 R/RStudioの利用環境設定などの参考にしましょう。
 
 ** RStudio

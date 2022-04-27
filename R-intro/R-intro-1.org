@@ -1,12 +1,9 @@
-#+include: R-intro-common.org
 #+property: header-args:R :session *bioR* :results output :exports both
 
   #+begin_src R :tangle R-intro/code/0403.R
   #+end_src
 
-  [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
-
-** 1. R の起動と終了
+* 1. R の起動と終了
 
   システムによって異なりますが、通常はコマンドラインで R と入力するか、
   R のアイコンをダブルクリックして起動します。R を終了させるときは、
@@ -20,7 +17,7 @@
 
   と入力します。
 
-** 2. 簡単な変数への代入
+* 2. 簡単な変数への代入
 
   変数とは様々な値を格納する箱のような概念です。例えば今 x という変数を考え、そこ
   に 123 を代入したければ、
@@ -66,7 +63,7 @@
   : [1] 2 3 4 5
 
 
-***  課題 2-1:
+**  課題 2-1:
    
     変数 z にベクトル(10, 11, 12)を代入し、またそれを表示してみましょう。
 

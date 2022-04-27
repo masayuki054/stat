@@ -1,3 +1,6 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+title: 講義について
        
 * 講義用のページ
 
@@ -15,15 +18,36 @@ https://wiki.cis.iwate-u.ac.jp/~suzuki/Lects/stat
   ID: 528 060 2571
   password: 0yzsb1
 
+* Todo 講義のやり方
+SCHEDULED: <2022-04-27 水>
+
+** 教科書を学ぶとき
+
+- 各節ごとに各自黙読し，
+- 講義ノートによる説明，
+- 自分のノートを作成し，
+- 重要な事を板書で確認
+- 板書のスクリーンショットを残す
+
   
+** R/RStudio で学ぶとき
 
+- RStudio を用いて，
+- Rmarkdownファイルに，下記の事柄を残しましょう：
+  - プログラムとその実行結果と
+  - プログラム等の説明
+- Rmarkdownを文書化 (html, pdf)しましょう
 
+講師は，emacs org-mode で書くのが最も効率的なので，
+org-mode から markdown 形式に変換したり，
+コピペしたりして，RStudioに持っていこうと思います。
 
 * 講義が難しい？
 
 ** 微分や積分は，確率統計を語るための，言葉です。
 
-      変化や蓄積を表すための，言葉です。
+
+変化や蓄積を表すための，言葉です。
 
       微分や積分の概念を習得できていないと，説明が説明でなくなります。
       微積分を復習して，きちんと概念を理解しておいてください。

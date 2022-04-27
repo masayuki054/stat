@@ -1,7 +1,6 @@
 #+setupfile: info/index-bigblow-header.setup
 #+include: info/common-header.org
-#+AUTHOR: 鈴木正幸，非常勤講師
-#+title: 確率統計 (2) 2022/04/27 
+#+title: 今日の講義 (2) 2022/04/27 
 #+OPTIONS:
 #+property: header-arg:R :session t :results output :exports both
 * 出席登録
@@ -14,6 +13,7 @@ RStudioを使って, Rを学び, Rmarkdown文書として纏めましょう:
 
 ** Todo [[https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html][R/RStudio入門]]
 
+ [[https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html][R/RStudio入門]] のとおりにやってみましょう
 
 ** Todo R markdown
 R プログラムとその出力，解説を含むドキュメントの作成に用います。
@@ -32,23 +32,32 @@ R プログラムとその出力，解説を含むドキュメントの作成に
 が，講師は，もっと便利で汎用な，emacs org-mode を使っています。RStudio
 は使いたくありません。悪しからず。
 
-** Someday 数式の表現
+** 数式の表現
+
+- [[https://qiita.com/kazutan/items/8441693e77e9cb6fd833][R Markdownで  Rチャンクと数式を組み合わせる - Qiita]]
+- [[https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%B0%A1%E5%8D%98%E3%81%AA%E6%95%B0%E5%BC%8F%281%29][LaTeX入門/簡単な数式(1) - TeX Wiki]]
+- [[https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%B0%A1%E5%8D%98%E3%81%AA%E6%95%B0%E5%BC%8F%282%29][LaTeX入門/簡単な数式(2) - TeX Wiki]]
+
 ** Todo R 言語 入門
 - [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
 
 プログラム言語としての機能を学び，RStudioを用いて，Rmarkdown文書を作成
 しましょう。
 
-** Someday Rの設定など
+** Rの設定など
 R/RStudioの利用環境設定などの参考にしましょう。
 
 - [[https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html][Rの初歩]]
 
 * Todo 確率と統計
 
- [[./notes/][講義ノート]]
+** 参照
+ - [[./text.org]] の確率とは
+ - 教科書と[[./notes/2022-stat-01章.pdf][講義ノート]]
+ - [[http://whitewell.sakura.ne.jp/R/Rprobability.html][Rで確率を学ぶ]] (白井)
 
 ** 確率と確率空間
+
 *** 1.1 標本空間と事象
 -  確率における標本空間と事象に関する言葉の定義，
    その定義を，集合の言葉での解釈する
@@ -88,8 +97,6 @@ R/RStudioの利用環境設定などの参考にしましょう。
  -  標本空間 $\Omega$
  -  事象の集合 A
  -  確率関数 P:A->R
-
-
 
 * 講義終了後アンケート
 [[https://drive.google.com/drive/u/1/folders/1-YWezVm0nuo-BAcGR9saY_jN1BRA0D1S][アンケート - Google ドライブ]]  フォルダ

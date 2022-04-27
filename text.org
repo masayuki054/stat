@@ -17,7 +17,7 @@
 
 * [[https://www.jstat.or.jp/openstatistics/][データ分析のための統計学入門 原著第4版 “OpenIntro Statistics Fourth Edition” - 日本統計協会]]
 
-  [[http://www.kunitomo-lab.sakura.ne.jp/2021-3-3Open(S).pdf][2021-3-3Open(S).pdf]]
+  [[http://www.kunitomo-lab.sakura.ne.jp/2021-3-3Open(S).pdf][2021-3-3Open(S).pdf]]  file://~suzuki/Lects/stat/OpenS.pdf
 
   下記2章の例題を参考にする予定です。
 

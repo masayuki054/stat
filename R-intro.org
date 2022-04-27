@@ -1,0 +1,24 @@
+#+setupfile: info/index-sos-header.setup
+#+include: info/common-header.org
+#+title:  [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][R入門]]
+#+OPTIONS: tex:t 
+#+property: header-args:R :session *bioR* :results output :exports both
+
+#+begin_src R :tangle R-intro/code/0403.R
+#+end_src
+
+# * 基本操作
+# 基本操作
+#+include: R-intro/R-intro-1.org
+#* COMMENT ベクトル，行列，リスト，データフレーム
+#ベクトル，行列，リスト，データフレーム
+
+#+include: R-intro/R-intro-2.org
+#* ファイル読み書き，プログラムの読み込み，関数定義
+#+include: R-intro/R-intro-3.org
+#* グラフの作成
+#+include: R-intro/R-intro-4.org
+#*  if, while, for 文
+#+include: R-intro/R-intro-5.org
+#* その他
+#+include: R-intro/R-intro-6.org

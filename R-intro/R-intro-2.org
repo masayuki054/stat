@@ -1,9 +1,7 @@
-#+include: R-intro-common.org
 #+property: header-args:R :session *bioR* :results output varbatim :exports both 
 
 #+begin_src R :tangle R-intro/code/02.R
 #+end_src
-[[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
 
 * 4. 簡単なベクトル演算
 
