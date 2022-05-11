@@ -3,10 +3,10 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2022-04-27 水 09:31 -->
+<!-- 2022-05-11 水 09:21 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>確率統計2022 今日の講義 (2) 2022/04/27</title>
+<title>確率統計2022 今日の講義 (3) 2022/05/11</title>
 <meta name="author" content="suzuki@iwate-u.ac.jp" />
 <meta name="generator" content="Org Mode" />
 <style>
@@ -191,7 +191,7 @@
     { font-size: 10px; font-weight: bold; white-space: nowrap; }
   .org-info-js_search-highlight
     { background-color: #ffff00; color: #000000; font-weight: bold; }
-  .org-svg { width: 90%; }
+  .org-svg { }
 </style>
 <link rel="stylesheet" type="text/css" href="https://www.pirilampo.org/styles/bigblow/css/htmlize.css"/>
 <link rel="stylesheet" type="text/css" href="https://wiki.cis.iwate-u.ac.jp/~suzuki/org-html-theme/styles/bigblow/css/bigblow.css"/>
@@ -228,50 +228,314 @@
 </head>
 <body>
 <div id="content" class="content">
-<h1 class="title">確率統計2022 今日の講義 (2) 2022/04/27</h1>
-<div id="outline-container-org8a315e3" class="outline-2">
-<h2 id="org8a315e3">出席登録</h2>
-<div class="outline-text-2" id="text-org8a315e3">
+<h1 class="title">確率統計2022 今日の講義 (3) 2022/05/11</h1>
+
+<div id="outline-container-org496e30c" class="outline-2">
+<h2 id="org496e30c">今日の講義予定</h2>
+<div class="outline-text-2" id="text-org496e30c">
+</div>
+<div id="outline-container-orga8f42d8" class="outline-3">
+<h3 id="orga8f42d8">R</h3>
+<div class="outline-text-3" id="text-orga8f42d8">
+<ul class="org-ul">
+<li>15分位の時間を使って，</li>
+<li>RStudio, Rmarkdown， r-chunk を使って，メモと演習しながら学びましょう:</li>
+</ul>
+</div>
+
+<div id="outline-container-orgd8b345c" class="outline-4">
+<h4 id="orgd8b345c">Rの関数電卓的な使い方 ~/Desktop/r-2.Rmd</h4>
+<div class="outline-text-4" id="text-orgd8b345c">
+<ul class="org-ul">
+<li><p>
+<a href="http://whitewell.sakura.ne.jp/R/">Webpage for Probability Theory and Statistics (B)</a>
+</p>
+
+<p>
+Rの基礎 (1) 基本演算，関数 を使って，式の計算方法を学びましょう
+</p></li>
+
+<li><a href="https://mathwords.net/dbinom#google_vignette">Rで二項分布の計算をする（dbinomなど） - 具体例で学ぶ数学</a>
+
+<ul class="org-ul">
+<li><a href="http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf">GaussFromBinominal.pdf</a> で二項分布について理解する</li>
+<li>二項係数の計算</li>
+<li>二項分布の計算</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org04732de" class="outline-3">
+<h3 id="org04732de">確率と確率空間</h3>
+<div class="outline-text-3" id="text-org04732de">
+<ul class="org-ul">
+<li>教科書を読み，</li>
+<li>講義ノートを開き <a href="https://drive.google.com/drive/u/1/folders/10dnYKqIDUbx4qT23k-p_RikOQjKwHCdz">notes-2020 - Google ドライブ</a> の1章</li>
+<li>書画カメラで講義ノートの閲覧と板書を行ない，</li>
+<li>(Emacsで記録し) 今日の講義で概観しながら，</li>
+</ul>
+</div>
+
+<div id="outline-container-org57239e2" class="outline-4">
+<h4 id="org57239e2">1.1 標本空間と事象</h4>
+<div class="outline-text-4" id="text-org57239e2">
+<ul class="org-ul">
+<li>確率における標本空間と事象に関する言葉の定義，
+その定義を，集合の言葉での解釈する
+<dl class="org-dl">
+<dt>標本空間</dt><dd>すべての根元事象の集合</dd>
+<dt>事象</dt><dd>標本空間の部分集合</dd>
+<dt>全ての事象の集合(族)</dt><dd>集合の和で閉じている(完全加法族)</dd>
+<dt>確率 (測度) 関数 P</dt><dd>事象Aの生起確率を \( P(A) \)と</dd>
+</dl></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5892882" class="outline-4">
+<h4 id="org5892882">1.2 確率の定義</h4>
+<div class="outline-text-4" id="text-org5892882">
+<ul class="org-ul">
+<li>P(A) : 確率関数，P, Aは事象， P(A)はAが起こる確率</li>
+<li>事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org89a5844" class="outline-4">
+<h4 id="org89a5844">1.3 確率の性質</h4>
+<div class="outline-text-4" id="text-org89a5844">
+<ul class="org-ul">
+<li>確率の公理</li>
+<li>排反な事象</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc7d20d2" class="outline-4">
+<h4 id="orgc7d20d2">1.4 条件付確率</h4>
+<div class="outline-text-4" id="text-orgc7d20d2">
+<ul class="org-ul">
+<li>\(P(B|A) = P(A) P(B \cup A)\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc54693e" class="outline-4">
+<h4 id="orgc54693e">1.5 独立性</h4>
+<div class="outline-text-4" id="text-orgc54693e">
+<ul class="org-ul">
+<li>\(P(B) = P(B|A)\) なら独立， 事象A と 事象B は無関係</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8fb190c" class="outline-4">
+<h4 id="org8fb190c">1.6 ベイズの定理</h4>
+<div class="outline-text-4" id="text-org8fb190c">
+<ul class="org-ul">
+<li>\(P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}\)
+<ul class="org-ul">
+<li>\(P(A\cap B_i) = P(B_i) P(A|B_i)\)</li>
+<li>\(P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge2f4a2c" class="outline-4">
+<h4 id="orge2f4a2c">1.7 例</h4>
+<div class="outline-text-4" id="text-orge2f4a2c">
+<ul class="org-ul">
+<li>くじをひく順番で当る確率が違うのか</li>
+<li>システム全体の故障率</li>
+<li>この検査は信頼できるのか</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd6f0166" class="outline-4">
+<h4 id="orgd6f0166">1.8 確率空間 とばす，2.9 と一緒に</h4>
+<div class="outline-text-4" id="text-orgd6f0166">
+<p>
+事象と確率を考える，確率モデル。
+</p>
+
+<ul class="org-ul">
+<li>標本空間 \(\Omega\)</li>
+<li>事象の集合 A</li>
+<li>確率関数 P:A-&gt;R</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org379a925" class="outline-2">
+<h2 id="org379a925"><span class="todo Todo">Todo</span> 出席登録</h2>
+<div class="outline-text-2" id="text-org379a925">
 <p>
 <a href="https://lms.iwate-u.ac.jp/webclass/course.php/22S6211/manage/?acs_=7a0611dd">確率統計学 [22S6211] - WebClass</a>
 </p>
 </div>
 </div>
 
-<div id="outline-container-org24cd0d1" class="outline-2">
-<h2 id="org24cd0d1">講義のやりかたについて</h2>
-<div class="outline-text-2" id="text-org24cd0d1">
+<div id="outline-container-org20c5266" class="outline-2">
+<h2 id="org20c5266"><span class="todo Doing">Doing</span> 講義のやりかたについて</h2>
+<div class="outline-text-2" id="text-org20c5266">
+<p>
+本日から確率統計の内容が本格的に始まります。
+</p>
+
 <p>
 <a href="./lect.html">./lect.html</a> の講義のやり方について意見を聞きたい
 </p>
 </div>
 </div>
 
-<div id="outline-container-org49b93b8" class="outline-2">
-<h2 id="org49b93b8">R/RStudio</h2>
-<div class="outline-text-2" id="text-org49b93b8">
+<div id="outline-container-org12b1549" class="outline-2">
+<h2 id="org12b1549"><span class="todo Todo">Todo</span> 確率と統計</h2>
+<div class="outline-text-2" id="text-org12b1549">
 </div>
-<div id="outline-container-orgd4a3e48" class="outline-3">
-<h3 id="orgd4a3e48">RStudio</h3>
-<div class="outline-text-3" id="text-orgd4a3e48">
+<div id="outline-container-orgc99b879" class="outline-3">
+<h3 id="orgc99b879">参照</h3>
+<div class="outline-text-3" id="text-orgc99b879">
+<ul class="org-ul">
+<li><a href="./text.html">./text.html</a> の確率とは</li>
+<li>教科書と<a href="./notes/2022-stat-01章.pdf">講義ノート</a></li>
+<li><a href="http://whitewell.sakura.ne.jp/R/Rprobability.html">Rで確率を学ぶ</a> (白井)</li>
+<li><a href="https://drive.google.com/drive/u/0/folders/1deXv6LjZU3KXXCjeTJfR2YfB6KEsOtKy">黒板 - Google ドライブ</a> 2021年度</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org0de880d" class="outline-3">
+<h3 id="org0de880d">確率と確率空間</h3>
+<div class="outline-text-3" id="text-org0de880d">
+</div>
+<div id="outline-container-org1fc002a" class="outline-4">
+<h4 id="org1fc002a">1.1 標本空間と事象</h4>
+<div class="outline-text-4" id="text-org1fc002a">
+<ul class="org-ul">
+<li>確率における標本空間と事象に関する言葉の定義，
+その定義を，集合の言葉での解釈する
+<dl class="org-dl">
+<dt>標本空間</dt><dd>すべての根元事象の集合</dd>
+<dt>事象</dt><dd>標本空間の部分集合</dd>
+<dt>全ての事象の集合(族)</dt><dd>集合の和で閉じている(完全加法族)</dd>
+<dt>確率 (測度) 関数 P</dt><dd>事象Aの生起確率を \( P(A) \)と</dd>
+</dl></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgcc906f0" class="outline-4">
+<h4 id="orgcc906f0">1.2 確率の定義</h4>
+<div class="outline-text-4" id="text-orgcc906f0">
+<ul class="org-ul">
+<li>P(A) : 確率関数，P, Aは事象， P(A)はAが起こる確率</li>
+<li>事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgd92a49b" class="outline-4">
+<h4 id="orgd92a49b">1.3 確率の性質</h4>
+<div class="outline-text-4" id="text-orgd92a49b">
+<ul class="org-ul">
+<li>確率の公理</li>
+<li>排反な事象</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge081036" class="outline-4">
+<h4 id="orge081036">1.4 条件付確率</h4>
+<div class="outline-text-4" id="text-orge081036">
+<ul class="org-ul">
+<li>\(P(B|A) = P(A) P(B \cup A)\)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org5944c54" class="outline-4">
+<h4 id="org5944c54">1.5 独立性</h4>
+<div class="outline-text-4" id="text-org5944c54">
+<ul class="org-ul">
+<li>\(P(B) = P(B|A)\) なら独立， 事象A と 事象B は無関係</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org517d3f0" class="outline-4">
+<h4 id="org517d3f0">1.6 ベイズの定理</h4>
+<div class="outline-text-4" id="text-org517d3f0">
+<ul class="org-ul">
+<li>\(P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}\)
+<ul class="org-ul">
+<li>\(P(A\cap B_i) = P(B_i) P(A|B_i)\)</li>
+<li>\(P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)\)</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgac5c541" class="outline-4">
+<h4 id="orgac5c541">1.7 例</h4>
+<div class="outline-text-4" id="text-orgac5c541">
+<ul class="org-ul">
+<li>くじをひく順番で当る確率が違うのか</li>
+<li>システム全体の故障率</li>
+<li>この検査は信頼できるのか</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgc15ad50" class="outline-4">
+<h4 id="orgc15ad50">1.8 確率空間 とばす，2.9 と一緒に</h4>
+<div class="outline-text-4" id="text-orgc15ad50">
+<p>
+事象と確率を考える，確率モデル。
+</p>
+
+<ul class="org-ul">
+<li>標本空間 \(\Omega\)</li>
+<li>事象の集合 A</li>
+<li>確率関数 P:A-&gt;R</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgc45e482" class="outline-2">
+<h2 id="orgc45e482">R/RStudio</h2>
+<div class="outline-text-2" id="text-orgc45e482">
+</div>
+<div id="outline-container-org08b8c04" class="outline-3">
+<h3 id="org08b8c04">RStudio</h3>
+<div class="outline-text-3" id="text-org08b8c04">
 <p>
 RStudioを使って, Rを学び, Rmarkdown文書として纏めましょう:
 </p>
 </div>
 </div>
 
-<div id="outline-container-org6214a94" class="outline-3">
-<h3 id="org6214a94"><span class="todo Todo">Todo</span> <a href="https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html">R/RStudio入門</a></h3>
-<div class="outline-text-3" id="text-org6214a94">
+<div id="outline-container-org9e36d1a" class="outline-3">
+<h3 id="org9e36d1a"><span class="todo Todo">Todo</span> <a href="https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html">R/RStudio入門</a></h3>
+<div class="outline-text-3" id="text-org9e36d1a">
 <p>
 <a href="https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html">R/RStudio入門</a> のとおりにやってみましょう
 </p>
 </div>
 </div>
 
-<div id="outline-container-org3678060" class="outline-3">
-<h3 id="org3678060"><span class="todo Todo">Todo</span> R markdown</h3>
-<div class="outline-text-3" id="text-org3678060">
+
+<div id="outline-container-org86b3d37" class="outline-3">
+<h3 id="org86b3d37"><span class="todo Todo">Todo</span> R markdown</h3>
+<div class="outline-text-3" id="text-org86b3d37">
 <p>
 R プログラムとその出力，解説を含むドキュメントの作成に用います。
 すごく便利です。
@@ -292,9 +556,9 @@ R プログラムとその出力，解説を含むドキュメントの作成に
 </ul>
 </div>
 
-<div id="outline-container-org99dc881" class="outline-4">
-<h4 id="org99dc881">emacs org-mode</h4>
-<div class="outline-text-4" id="text-org99dc881">
+<div id="outline-container-orga37935b" class="outline-4">
+<h4 id="orga37935b">emacs org-mode</h4>
+<div class="outline-text-4" id="text-orga37935b">
 <p>
 が，講師は，もっと便利で汎用な，emacs org-mode を使っています。RStudio
 は使いたくありません。悪しからず。
@@ -303,9 +567,9 @@ R プログラムとその出力，解説を含むドキュメントの作成に
 </div>
 </div>
 
-<div id="outline-container-orgd998a76" class="outline-3">
-<h3 id="orgd998a76">数式の表現</h3>
-<div class="outline-text-3" id="text-orgd998a76">
+<div id="outline-container-orga8eb16e" class="outline-3">
+<h3 id="orga8eb16e">数式の表現</h3>
+<div class="outline-text-3" id="text-orga8eb16e">
 <ul class="org-ul">
 <li><a href="https://qiita.com/kazutan/items/8441693e77e9cb6fd833">R Markdownで  Rチャンクと数式を組み合わせる - Qiita</a></li>
 <li><a href="https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%B0%A1%E5%8D%98%E3%81%AA%E6%95%B0%E5%BC%8F%281%29">LaTeX入門/簡単な数式(1) - TeX Wiki</a></li>
@@ -314,9 +578,9 @@ R プログラムとその出力，解説を含むドキュメントの作成に
 </div>
 </div>
 
-<div id="outline-container-org69b1f68" class="outline-3">
-<h3 id="org69b1f68"><span class="todo Todo">Todo</span> R 言語 入門</h3>
-<div class="outline-text-3" id="text-org69b1f68">
+<div id="outline-container-org5bab0c1" class="outline-3">
+<h3 id="org5bab0c1"><span class="todo Todo">Todo</span> R 言語 入門</h3>
+<div class="outline-text-3" id="text-org5bab0c1">
 <ul class="org-ul">
 <li><a href="http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf">初心者用 - R_Stats2.pdf</a></li>
 </ul>
@@ -328,9 +592,9 @@ R プログラムとその出力，解説を含むドキュメントの作成に
 </div>
 </div>
 
-<div id="outline-container-org715cc33" class="outline-3">
-<h3 id="org715cc33">Rの設定など</h3>
-<div class="outline-text-3" id="text-org715cc33">
+<div id="outline-container-orgf8b608e" class="outline-3">
+<h3 id="orgf8b608e">Rの設定など</h3>
+<div class="outline-text-3" id="text-orgf8b608e">
 <p>
 R/RStudioの利用環境設定などの参考にしましょう。
 </p>
@@ -342,128 +606,15 @@ R/RStudioの利用環境設定などの参考にしましょう。
 </div>
 </div>
 
-<div id="outline-container-orgbde46e5" class="outline-2">
-<h2 id="orgbde46e5"><span class="todo Todo">Todo</span> 確率と統計</h2>
-<div class="outline-text-2" id="text-orgbde46e5">
-</div>
-<div id="outline-container-org2a47435" class="outline-3">
-<h3 id="org2a47435">参照</h3>
-<div class="outline-text-3" id="text-org2a47435">
-<ul class="org-ul">
-<li><a href="./text.html">./text.html</a> の確率とは</li>
-<li>教科書と<a href="./notes/2022-stat-01章.pdf">講義ノート</a></li>
-<li><a href="http://whitewell.sakura.ne.jp/R/Rprobability.html">Rで確率を学ぶ</a> (白井)</li>
-<li><a href="https://drive.google.com/drive/u/0/folders/1deXv6LjZU3KXXCjeTJfR2YfB6KEsOtKy">黒板 - Google ドライブ</a> 2021年度</li>
-</ul>
-</div>
-</div>
-<div id="outline-container-orgaa39a0a" class="outline-3">
-<h3 id="orgaa39a0a">確率と確率空間</h3>
-<div class="outline-text-3" id="text-orgaa39a0a">
-</div>
-<div id="outline-container-org5ef9657" class="outline-4">
-<h4 id="org5ef9657">1.1 標本空間と事象</h4>
-<div class="outline-text-4" id="text-org5ef9657">
-<ul class="org-ul">
-<li>確率における標本空間と事象に関する言葉の定義，
-その定義を，集合の言葉での解釈する
-<dl class="org-dl">
-<dt>標本空間</dt><dd>すべての根元事象の集合</dd>
-<dt>事象</dt><dd>標本空間の部分集合</dd>
-<dt>全ての事象の集合(族)</dt><dd>集合の和で閉じている(完全加法族)</dd>
-<dt>確率 (測度) 関数 P</dt><dd>事象Aの生起確率を \( P(A) \)と</dd>
-</dl></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org713ae17" class="outline-4">
-<h4 id="org713ae17">1.2 確率の定義</h4>
-<div class="outline-text-4" id="text-org713ae17">
-<ul class="org-ul">
-<li>P(A) : 確率関数，P, Aは事象， P(A)はAが起こる確率</li>
-<li>事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org95838ef" class="outline-4">
-<h4 id="org95838ef">1.3 確率の性質</h4>
-<div class="outline-text-4" id="text-org95838ef">
-<ul class="org-ul">
-<li>確率の公理</li>
-<li>排反な事象</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orgde975f0" class="outline-4">
-<h4 id="orgde975f0">1.4 条件付確率</h4>
-<div class="outline-text-4" id="text-orgde975f0">
-<ul class="org-ul">
-<li>\(P(B|A) = P(A) P(B \cup A)\)</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org078c3ac" class="outline-4">
-<h4 id="org078c3ac">1.5 独立性</h4>
-<div class="outline-text-4" id="text-org078c3ac">
-<ul class="org-ul">
-<li>\(P(B) = P(B|A)\) なら独立， 事象A と 事象B は無関係</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org0088ca1" class="outline-4">
-<h4 id="org0088ca1">1.6 ベイズの定理</h4>
-<div class="outline-text-4" id="text-org0088ca1">
-<ul class="org-ul">
-<li>\(P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}\)
-<ul class="org-ul">
-<li>\(P(A\cap B_i) = P(B_i) P(A|B_i)\)</li>
-<li>\(P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)\)</li>
-</ul></li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-org47466d5" class="outline-4">
-<h4 id="org47466d5">1.7 例</h4>
-<div class="outline-text-4" id="text-org47466d5">
-<ul class="org-ul">
-<li>くじをひく順番で当る確率が違うのか</li>
-<li>システム全体の故障率</li>
-<li>この検査は信頼できるのか</li>
-</ul>
-</div>
-</div>
-
-<div id="outline-container-orga288fbe" class="outline-4">
-<h4 id="orga288fbe">1.8 確率空間 とばす，2.9 と一緒に</h4>
-<div class="outline-text-4" id="text-orga288fbe">
-<p>
-事象と確率を考える，確率モデル。
-</p>
-
-<ul class="org-ul">
-<li>標本空間 \(\Omega\)</li>
-<li>事象の集合 A</li>
-<li>確率関数 P:A-&gt;R</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
-<div id="outline-container-org89918da" class="outline-2">
-<h2 id="org89918da">講義終了後アンケート</h2>
-<div class="outline-text-2" id="text-org89918da">
+<div id="outline-container-orgec4ddbe" class="outline-2">
+<h2 id="orgec4ddbe">講義終了後アンケート</h2>
+<div class="outline-text-2" id="text-orgec4ddbe">
 <p>
 <a href="https://drive.google.com/drive/u/1/folders/1-YWezVm0nuo-BAcGR9saY_jN1BRA0D1S">アンケート - Google ドライブ</a>  フォルダ
 </p>
+
 <ul class="org-ul">
-<li>アンケート (任意) <a href="https://forms.gle/aAyPxDV4tBoTy4Z46">https://forms.gle/aAyPxDV4tBoTy4Z46</a>
+<li>アンケート (任意)  <a href="https://forms.gle/KPLHHzahGfb59exWA">https://forms.gle/KPLHHzahGfb59exWA</a>
 講義終了後に</li>
 </ul>
 </div>
@@ -471,7 +622,7 @@ R/RStudioの利用環境設定などの参考にしましょう。
 </div>
 <div id="postamble" class="status">
 <p class="author">Author: suzuki@iwate-u.ac.jp</p>
-<p class="date">Created: 2022-04-27 水 09:31</p>
+<p class="date">Created: 2022-05-11 水 09:21</p>
 <p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>

@@ -4,8 +4,7 @@
 
 * Rによるやさしい統計学
 
-
-* [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]] 中京大 白井先生
+[[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]
 
 ** 確率の教材  
 - [[http://whitewell.sakura.ne.jp/R/Rprobability.html][Rで確率を学ぶ]] (白井)

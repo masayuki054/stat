@@ -1,6 +1,6 @@
 #+setupfile: info/index-bigblow-header.setup
 #+include: info/common-header.org
-#+title: 2021年の講義の進行
+#+title: 2022年の講義の進行
 
 * 確率と確率空間
 ** 1.1 標本空間と事象
