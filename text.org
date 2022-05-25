@@ -32,5 +32,14 @@
 - [[https://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87][確率 - Wikipedia]],
 - [[https://ja.wikipedia.org/wiki/%E7%A2%BA%E7%8E%87%E8%AB%96][確率論 - Wikipedia]]
 
+* R
+- [[http://www.f.waseda.jp/sakas/R/][道具箱：R]]
+
+* 分布表
+   - [[http://www3.u-toyama.ac.jp/kkarato/2019/statistics/table/z.pdf][標準正規分布配布用 - z.pdf]]
+   - [[http://www3.u-toyama.ac.jp/kkarato/2019/statistics/table/t.pdf][t分布 - t.pdf]]
+   - [[http://www3.u-toyama.ac.jp/kkarato/2019/statistics/table/chisq.pdf][CHISQ-TABLE.docx - chisq.pdf]]
+   - [[http://www3.u-toyama.ac.jp/kkarato/2019/statistics/table/F.pdf][Fs - F.pdf]]
+
 
   

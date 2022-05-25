@@ -1,0 +1,97 @@
+#+OPTIONS: tex:t 
+#+include: R-common.org
+#+Title: R による確率分布の計算
+
+
+
+** [[https://bellcurve.jp/statistics/course/7885.html][練習問題（14. いろいろな確率分布2） | 統計学の時間 | 統計WEB]]
+
+確率変数が標準正規分布 \(N(0,1)\) に従うとき、\(Z\) が2以上となる確率
+\(P(Z\ge 2)\)を標準正規分布表から求めよ。
+
+#+begin_src R :session *r* :results output :exports both
+pnorm(2.0)
+pnorm(2.0,lower.tail=F) # 上側
+
+#+end_src
+
+#+RESULTS:
+: [1] 0.9772499
+: [1] 0.02275013
+
+
+確率変数 \(Z\)が標準正規分布に従うとき、\(Z\)が \(z\) 以上となる確率
+\(P(Z\gez)\)が10％となるような \(z\)を標準正規分布表から求めよ。
+
+#+begin_src R :session *r* :results output :exports both
+qnorm(0.1)
+qnorm(0.1,lower.tail=F)
+#+end_src
+
+#+RESULTS:
+: [1] -1.281552
+: [1] 1.281552
+
+
+日本人男性の平均身長が正規分布
+\(N(172,5.5^2)\)に従うと仮定し、次の3つの割合を求めよ。
+
+    - 平均身長以下の人の割合
+
+#+begin_src R :session *r* :results output :exports both
+pnorm(172, mean=172, sd=5.5)
+
+#+end_src
+
+#+RESULTS:
+: [1] 0.5
+
+    - 平均±1標準偏差の間に収まる人の割合
+
+#+begin_src R :session *r* :results output :exports both
+pnorm(172+5.5, mean=172, sd=5.5) - pnorm(172-5.5, mean=172, sd=5.5)
+
+#+end_src
+
+#+RESULTS:
+: [1] 0.6826895
+      
+    - 180cm以上となる人の割合
+
+#+begin_src R :session *r* :results output :exports both
+
+pnorm(180, mean=172, sd=5.5,lower.tail=F)
+
+#+end_src
+
+#+RESULTS:
+: [1] 0.07289757
+      
+
+
+ある模擬試験でA君の成績は英語79点、数学82点であった。
+
+英語の平均点は85点、標準偏差は4点の正規分布に従うものとする。A君の
+成績は下からどれくらいの順位か。
+   
+#+begin_src R :session *r* :results output :exports both
+pnorm(79, mean=85, sd=4)
+
+#+end_src
+
+#+RESULTS:
+: [1] 0.0668072
+
+
+数学では、A君の成績は上位約5%の順位
+であった。数学の標準偏差が10点であるとき、数学の平均点はどれくらい
+か。なお、数学の点数の分布は正規分布に従うものとする。
+
+#+begin_src R :session *r* :results output :exports both
+
+82-qnorm(0.95)*10
+
+#+end_src
+
+#+RESULTS:
+: [1] 65.55146

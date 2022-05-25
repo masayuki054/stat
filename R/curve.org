@@ -1,0 +1,110 @@
+#+OPTIONS: tex:t 
+#+include: R-common.org
+#+Title: 確率分布関数の描画
+
+
+* 参考
+- http://www.f.waseda.jp/sakas/R/Rcalculation.html#stat
+- [[https://ai-trend.jp/programming/r-beginner/normal-distribution-2/][正規分布のグラフをRで描く。【curve()の使い方】 | AVILEN AI Trend]]
+- [[http://www.f.waseda.jp/sakas/R/][道具箱：R]]  
+
+
+#+property: header-args:R :session *r* :results output :exports both
+
+* 連続一様分布
+
+dunif: 連続一様確率密度関数， パラメータ min, max
+
+#+begin_src R :session *r* :results output :exports both
+
+curve(dunif(x,1,2), 0,4, main="連続一分布様")
+curve(dunif(x,1,3), 0,4, col="red", add=T)
+
+#+end_src
+
+
+* 二項分布
+
+dbinom: size, prob
+
+#+begin_src R :session *r* :results output :exports both
+
+curve(dbinom(x,size=100,prob=0.5), 0, 100, main="二項分布")
+
+
+#+end_src
+
+#+RESULTS:
+
+* ポアソン分布
+
+dpois: lambda (頻度)
+
+#+begin_src R :session *r* :results output :exports both
+
+curve(dpois(x,lambda=3), 0, 20, main="ポアソン分布",col=1)
+curve(dpois(x,lambda=10), 0, 20, col=2,add=T)
+legend(c("lambda=3", "lambda=10":),col=1:2)
+
+
+#+end_src
+
+#+RESULTS:
+:  50 件以上の警告がありました (最初の 50 個の警告を見るには warnings() を使って下さい)
+:  50 件以上の警告がありました (最初の 50 個の警告を見るには warnings() を使って下さい)
+:  エラー:   予想外の ')' です  ( "legend(c("lambda=3", "lambda=10":)" の)
+
+* 正規分布
+
+dbinom: size, prob
+
+#+begin_src R :session *r* :results output :exports both
+
+curve(dnorm(x,mean=50,sd=5), 0, 100, main="二項分布")
+
+#+end_src
+
+#+RESULTS:
+
+
+* 二項分布と正規分布
+
+dbinom: size, prob
+
+#+begin_src R :session *r* :results output :exports both
+
+curve(dnorm(x,mean=50,sd=5), 0, 100, main="二項分布と正規分布",col="blue")
+curve(dbinom(x,size=100,prob=0.5), 0, 100, add=T, col="red")
+#+end_src
+
+#+RESULTS:
+
+
+* 二項分布とポアソン分布
+
+２項分布のパラメータ n, p の n が大きく、np がほどほどの時、ポアソン分
+布で近似できることを視覚的に確認する。
+
+グラフを重ねるには低水準作図関数の lines 関数を使う。
+
+    - dbinom 関数は2項分布の質量関数、
+    - qbinom 関数は2項分布の累積分布関数の逆関数で、この場合は下側 0.1%点、上側 99.9%点を求めている。
+    - plot 関数の type="h" オプションは棒グラフを描き、
+    - lwd= オプションは線の太さを指定する。
+    - qpois 関数はポアソン分布の質量関数。
+
+#+begin_src R :session *r* :results output :exports both
+
+n = 1000
+p = 0.02
+na = qbinom(0.001, n, p)
+nb = qbinom(0.999, n, p)
+plot(na:nb, dbinom(na:nb,n,p), type="h", lwd=3, main=paste("n =", n, ", p =",p))
+lines(na:nb, dpois(na:nb, n*p), col = 2)
+abline(h=0)
+text(30, 0.085, "折れ線はポアソン分布")
+
+#+end_src
+
+#+RESULTS:
+

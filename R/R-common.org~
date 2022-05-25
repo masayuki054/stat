@@ -1,6 +1,0 @@
-#+setupfile: info/index-bigblow-header.setup
-#+include: info/common-header.org
-#+AUTHOR: 鈴木正幸，非常勤講師
-#+title: R 入門
-#+OPTIONS: tex:t 
-#+property: header-args:R :session *rtext* :results output :exports both
