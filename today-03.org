@@ -1,0 +1,153 @@
+* 今日の講義 (3) 2022/05/11
+** R
+- 15分位の時間を使って，
+- RStudio, Rmarkdown， r-chunk を使って，メモと演習しながら学びましょう:
+
+*** Done Rの関数電卓的な使い方 ~/Desktop/r-2.Rmd
+CLOSED: [2022-05-16 月 20:11]
+
+    - [[http://whitewell.sakura.ne.jp/R/][Webpage for Probability Theory and Statistics (B)]]
+
+      Rの基礎 (1) 基本演算，関数 を使って，式の計算方法を学びましょう
+      
+    - [[https://mathwords.net/dbinom#google_vignette][Rで二項分布の計算をする（dbinomなど） - 具体例で学ぶ数学]]
+
+      - [[http://www.chem.konan-u.ac.jp/applphys/web_material/GaussFromBinominal.pdf][GaussFromBinominal.pdf]] で二項分布について理解する
+      - 二項係数の計算
+      - 二項分布の計算
+
+** 確率と確率空間
+
+- 教科書を読み，
+- 講義ノートを開き [[https://drive.google.com/drive/u/1/folders/10dnYKqIDUbx4qT23k-p_RikOQjKwHCdz][notes-2020 - Google ドライブ]] の1章
+- 書画カメラで講義ノートの閲覧と板書を行ない，
+- (Emacsで記録し) 今日の講義で概観しながら，
+
+*** Done 1.1 標本空間と事象
+CLOSED: [2022-05-16 月 20:12]
+-  確率における標本空間と事象に関する言葉の定義，
+   その定義を，集合の言葉での解釈する
+   - 標本空間 :: すべての根元事象の集合
+   - 事
+     象 :: 標本空間の部分集合
+   - 全ての事象の集合(族) :: 集合の和で閉じている(完全加法族)
+   - 確率 (測度) 関数 P :: 事象Aの生起確率を \( P(A) \)と
+
+*** Done 1.2 確率の定義
+CLOSED: [2022-05-16 月 20:12]
+- P(A) : 確率関数，P, Aは事象， P(A)はAが起こる確率
+- 事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。
+
+*** Done 1.3 確率の性質
+CLOSED: [2022-05-16 月 20:12]
+- 確率の公理
+- 排反な事象
+  
+*** Done 1.4 条件付確率
+CLOSED: [2022-05-16 月 20:12]
+- $P(B|A) = P(A) P(B \cup A)$
+      
+*** Done 1.5 独立性
+CLOSED: [2022-05-16 月 20:12]
+- $P(B) = P(B|A)$ なら独立， 事象A と 事象B は無関係
+      
+*** Done 1.6 ベイズの定理
+CLOSED: [2022-05-16 月 20:12]
+- $P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}$
+  - $P(A\cap B_i) = P(B_i) P(A|B_i)$
+  - $P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)$ 
+      
+** Todo 確率と統計
+
+*** 参照
+ - [[./text.org]] の確率とは
+ - 教科書と[[./notes/2022-stat-01章.pdf][講義ノート]]
+ - [[http://whitewell.sakura.ne.jp/R/Rprobability.html][Rで確率を学ぶ]] (白井)
+ - [[https://drive.google.com/drive/u/0/folders/1deXv6LjZU3KXXCjeTJfR2YfB6KEsOtKy][黒板 - Google ドライブ]] 2021年度
+*** 確率と確率空間
+
+**** 1.1 標本空間と事象
+-  確率における標本空間と事象に関する言葉の定義，
+   その定義を，集合の言葉での解釈する
+   - 標本空間 :: すべての根元事象の集合
+   - 事象 :: 標本空間の部分集合
+   - 全ての事象の集合(族) :: 集合の和で閉じている(完全加法族)
+   - 確率 (測度) 関数 P :: 事象Aの生起確率を \( P(A) \)と
+
+**** 1.2 確率の定義
+- P(A) : 確率関数，P, Aは事象， P(A)はAが起こる確率
+- 事象の生起確率 = |事象集合|/|全事象集合|， |集合| は集合の濃度。
+
+**** 1.3 確率の性質
+- 確率の公理
+- 排反な事象
+  
+**** 1.4 条件付確率
+- $P(B|A) = P(A) P(B \cup A)$
+      
+**** 1.5 独立性
+- $P(B) = P(B|A)$ なら独立， 事象A と 事象B は無関係
+      
+**** 1.6 ベイズの定理
+- $P(B_i|A) = \frac{P(A \cap B_i)}{P(A)}$
+  - $P(A\cap B_i) = P(B_i) P(A|B_i)$
+  - $P(A) = \Sigma_{1}^{n} P(B_i) P(A|B_i)$ 
+      
+**** 1.7 例
+-  くじをひく順番で当る確率が違うのか
+-  システム全体の故障率
+-  この検査は信頼できるのか
+
+**** 1.8 確率空間 とばす，2.9 と一緒に
+
+事象と確率を考える，確率モデル。
+
+ -  標本空間 $\Omega$
+ -  事象の集合 A
+ -  確率関数 P:A->R
+
+
+** R/RStudio
+*** RStudio
+
+RStudioを使って, Rを学び, Rmarkdown文書として纏めましょう:
+
+*** Todo [[https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html][R/RStudio入門]]
+
+[[https://kazutan.github.io/JSSP2018_spring/intro_rstudio.html][R/RStudio入門]] のとおりにやってみましょう
+
+
+*** Todo R markdown
+R プログラムとその出力，解説を含むドキュメントの作成に用います。
+すごく便利です。
+
+プログラムの開発，デバッグ，ドキュメンテーションが，一つのファイルで行
+えます。
+
+本講義でのプログラム作成は，これを用いましょう。
+
+- [[https://kazutan.github.io/kazutanR/Rmd_intro.html][R Markdown入門]] [[https://qiita.com/tomotagwork/items/c92fb40a76f56ea16aa4][R Markdownによるレポート生成 - Qiita]]
+- [[https://rpubs.com/ktgrstsh/755893][RPubs - Tokyo.R #91 R Markdown 入門補足資料]]
+
+**** emacs org-mode 
+
+が，講師は，もっと便利で汎用な，emacs org-mode を使っています。RStudio
+は使いたくありません。悪しからず。
+
+*** 数式の表現
+
+- [[https://qiita.com/kazutan/items/8441693e77e9cb6fd833][R Markdownで  Rチャンクと数式を組み合わせる - Qiita]]
+- [[https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%B0%A1%E5%8D%98%E3%81%AA%E6%95%B0%E5%BC%8F%281%29][LaTeX入門/簡単な数式(1) - TeX Wiki]]
+- [[https://texwiki.texjp.org/?LaTeX%E5%85%A5%E9%96%80%2F%E7%B0%A1%E5%8D%98%E3%81%AA%E6%95%B0%E5%BC%8F%282%29][LaTeX入門/簡単な数式(2) - TeX Wiki]]
+
+*** Todo R 言語 入門
+- [[http://chianti.ucsd.edu/~rsaito/ENTRY1/WEB_RS3/PDF/JPN/Texts/R_Stats2.pdf][初心者用 - R_Stats2.pdf]]
+
+プログラム言語としての機能を学び，RStudioを用いて，Rmarkdown文書を作成
+しましょう。
+
+*** Rの設定など
+R/RStudioの利用環境設定などの参考にしましょう。
+
+- [[https://oku.edu.mie-u.ac.jp/~okumura/stat/first.html][Rの初歩]]
+
