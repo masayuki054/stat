@@ -1,0 +1,21 @@
+---
+title: "dice"
+output: html_document
+date: '2022-05-18'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+(dice <- runif(1, min=1,max=7))
+```
+```{r}
+```
+
+
+```{r}
+(dice <- floor(runif(1000,min=1,max=7)))
+```
+
