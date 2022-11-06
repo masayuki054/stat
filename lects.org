@@ -1,0 +1,25 @@
+#+setupfile: info/index-bigblow-header.setup
+#+include: info/common-header.org
+#+title: 2022 確率統計講義 
+#+OPTIONS:
+#+property: header-arg:R :session t :results output :exports both
+
+* 講義内容
+- 教科書 
+- [[./notes/2022-stat-01章.pdf][講義ノート]]
+- 講義記録動画 [[./2022]]
+- [[https://drive.google.com/drive/u/0/folders/1deXv6LjZU3KXXCjeTJfR2YfB6KEsOtKy][黒板 - Google ドライブ]] 2021年度
+
+* 毎回の講義内容
+- [[./today-01.org]] 
+- [[./today-02.org]] 
+- [[./today-03.org]] 
+- [[./today-04.org]] 
+- [[./today-05.org]]
+  
+* 参照
+- 参考書 [[./text.org]] 
+- [[http://whitewell.sakura.ne.jp/R/Rprobability.html][Rで確率を学ぶ]] (白井)
+
+
+
